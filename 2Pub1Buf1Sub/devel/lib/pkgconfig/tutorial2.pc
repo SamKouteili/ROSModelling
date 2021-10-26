@@ -1,0 +1,8 @@
+prefix=/home/samkouteili/trial_catkin/devel
+
+Name: tutorial2
+Description: Description of tutorial2
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
