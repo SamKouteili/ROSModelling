@@ -4,6 +4,8 @@
 void writeMsgToLog(const std_msgs::String::ConstPtr& msg){
 
   ROS_INFO("Message Recieved: %s", msg->data.c_str());
+
+  ros::Duration(1).sleep();
   
 }
 
