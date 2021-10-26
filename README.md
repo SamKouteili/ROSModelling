@@ -12,7 +12,13 @@ This clears all the existing cache, which will allow for the project to properly
 ```
 catkin_make
 ```
-At this point, the project should compile. In order to actually run the project, first run 
+At this point, the project should compile. *However*, if this does not work, another approach would be to create a new folder with a `src` subfolder in it, as follows:
+```
+mkdir -p myWorkspace/src
+```
+Then, run `catkin_make` in the base directory of this newly created repository. This will add `build` and `devel` folders to the repository. At this point, proceed to the `src` folder of one of the existing test cases. Proceed to copy both the `CMakeLists.txt` as well as the `pkg01` folders into the `src` folder of this newly created repository. Then proceed to run `catkin_make` once again in the root of `myWorkspace`. This will recompile the project with the added project.
+
+In order to actually run the project, first run 
 ```
 source devel/setup.bash
 ```
