@@ -18,15 +18,13 @@ mkdir -p myWorkspace/src
 ```
 Then, run `catkin_make` in the base directory of this newly created repository. This will add `build` and `devel` folders to the repository. At this point, proceed to the `src` folder of one of the existing test cases. Proceed to copy both the `CMakeLists.txt` as well as the `pkg01` folders into the `src` folder of this newly created repository. Then proceed to run `catkin_make` once again in the root of `myWorkspace`. This will recompile the project with the added project.
 
-In order to actually run the project, first run 
-```
-source devel/setup.bash
-```
-followed by
+## Execution
+
+In order to actually run the project, first run:
 ```
 roscore
 ```
-Ensuring that the driver roscore terminal remains active, open a new terminal. Once again, run
+Ensuring that the driver roscore terminal remains active, open a new terminal and run:
 ```
 source devel/setup.bash
 ```
@@ -38,4 +36,9 @@ Followed by the tab button twice. This will present a list of nodes that can be 
 ```
 rosrun pkg01 publisher_node2
 ```
-For every new node you want to run, be sure to open another terminal and once again source to setup.bash.
+For every new node you want to run, be sure to open another terminal and once again source to setup.bash. Only then can you actually call `rosrun` and find the nodes in the packages.
+
+### Remarks
+
+- We cannot interpret topics as buffers as per the definition ascribed to dataflow graph buffers. Publishers and subscribers do not publish to a shared buffer - rather, they are eached constrained by their own buffered limitations when producing/consuming data to a topic, which can almost be seen as a 'cloud' of information.
+- When suscriber nodes subscribe to two different topics, their subscription to said topics is independent. There is no 'competition' between publishers to have access to a subscribers limited buffer, as a indepednet subscriber object, and thus subscriber buffer, is created for each topic a subcscriber is subscribed to.
