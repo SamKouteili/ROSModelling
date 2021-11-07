@@ -1,0 +1,15 @@
+07-11-21
+To get the timestamp file:
+first, initialise the timestamp file
+> rostopic echo -b <bagfile> > <timestampfile>
+then, add other timestamps from other topics
+> rostopic echo -b <bagfile> >> <timestampfile>
+After everything is okay, run the Rscript.
+> Rscript make-graph.R <timestampfile>
+This will produce a "timestamp-graph.png" file.	
+
+I automatised the making of graph from the timestamp.csv. 
+I could use the "Rscript make-graph.R <filename>" to make the graph.
+I need to find out a way to draw the grid properly.
+I also need to find out a way to use python. 
+
