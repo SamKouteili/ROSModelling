@@ -8,7 +8,7 @@ with timestamp header (th):
 [<topic> <example of timestamp>]
 
 ***************
-/base_waypoints
+/w
 > there are headers but there seems to only be one that exist.
 ---
 header:

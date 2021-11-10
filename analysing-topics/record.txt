@@ -13,3 +13,17 @@ I could use the "Rscript make-graph.R <filename>" to make the graph.
 I need to find out a way to draw the grid properly.
 I also need to find out a way to use python. 
 
+For the timestamp.csv file, 
+I tried to use 4 different topics, which are:
+1. /base_waypoints
+2. /cluster_centroids
+3. /current_velocity
+4. /detection/lidar_detector/cloud_clusters
+
+
+What if:
+1. I write a shellscript to diagnose if there is the timestamp
+2. Based on the diagnosed result, I get the timestamps from them
+timeout 30 <code> in shellscript
+3. Then, from the timestamps, pipe it to Rscript to make the graph
+4. Then I create a topic-index list ot go with it
