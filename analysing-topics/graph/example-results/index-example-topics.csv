@@ -1,0 +1,6 @@
+"index","topics"
+1,"base_waypoint"
+2,"cluster_centroids"
+3,"current_velocity"
+4,"detection/lidar_detector/cloud_custers"
+5,"detection/lidar_detector/objects"

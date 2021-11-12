@@ -1,22 +1,22 @@
-# making graph
+# making graph from Autoware topics
 # by marcellinus jerricho
-# version 07-11-21
+# version 10-11-21
 
-# import library  ---------------------------------------------------------------
-# library("dplyr") 
-# library("ggplot2")
-
-# setting up data --------------------------------------------------------------
+# Getting data -----------------------------------------------------------------
 args <- commandArgs(TRUE)
-data <- t(read.csv(args[1], header = FALSE))
+data <- t(read.csv(args[1], header = FALSE, row.names = 1))
+#data <- t(read.csv("timestamp.csv", header = FALSE, row.names = 1))
 
-len <- 100 # number of calls to look at
+# Preparing data and graph -----------------------------------------------------
+# Set the number of calls to look at - UPDATE AS NEEDED!
+len <- 100
 
-# set up index, x minimum and maximum
+# set up index 
 index <- seq(1, ncol(data), 1)
+#x minimum and maximum - THIS NEEDS TO BE UPDATED!
 xlim <- c(1427157864, 1427157867)
 
-# Drawing graph individually with limit in x-axis
+# Generate graph individually with limit in x-axis and save it as png ----------
 png('timestamp-graph.png', width = 1000, height = 600, units="px")
 plot(x=data[1:len,1], xlim = xlim, 
      y = rep(index[1], len), ylim = c(1, ncol(data)),
@@ -27,15 +27,8 @@ for (i in 2:length(index)) {
 grid(NULL, NULL)
 dev.off()
 
-
-# using ggplot without limit in x-axis
-# for (i in 2:ncol(data)) {
-#   print(i)
-# }
-# help(ggplot)
-# ggplot() + 
-#   scale_shape_manual(values = 12) +
-#   geom_point(aes(x = data[1:len, 1], y = rep(1, len))) + 
-#   geom_point(aes(x = data[1:len, 2], y = rep(1.1, len))) + 
-#   geom_point(aes(x = data[1:len, 3], y = rep(1.2, len)))
-  
+# create an index of the topic for reference and save it as csv ----------------
+topics <- colnames(data)
+indexed_topics <- data.frame(index = seq.int(1, length(topics)), 
+                             topics = topics)
+write.csv(indexed_topics, "index-topics.csv", row.names = FALSE)
