@@ -18,7 +18,7 @@ int main (int argc, char **argv) {
     ss << "a" << count;
     msg.data = ss.str();
 
-    ROS_INFO("%s", msg.data.c_str());
+    ROS_INFO("publisher_node PUSHED %s TO topic1", msg.data.c_str());
     
     topic_pub.publish(msg);
     ros::spinOnce();

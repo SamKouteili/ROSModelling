@@ -1,0 +1,5 @@
+Very curious observation here. Effectively, with two publishers publishing to the same topic with a subscriber, the first publisher that the subscriber
+connects with is given precedence. What this means is that if publisher_node starts publsihing first, and then publisher_node2 starts publishing, subcriber_node
+(with a buffer size of 1 and a sleep) will only recieve data from publisher_node. If we kill publisher_node, it will start recieving from publisher_node2 -
+*however*, if we reintroduce publisher_node, subscriber_node will start exclusively recieving from publisher_node again. This may be due to the ordering of the
+recievers in the subscriber_node file. In the file, the subscription to publisher_node is one line above the subscription to publisher_node2. 
