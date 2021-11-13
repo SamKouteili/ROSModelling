@@ -1,0 +1,133 @@
+Information too find (paragraph)
+1. where is the source file
+	terminal: locate <node name>
+2. what are the input and output topics and how does it relate
+	rosnode info <node> ->  publications	->	output topics
+				subscriptions	->	input topics
+	just copy-paste it.
+	how does it relate -> read the README.md file
+3. Find publishers and subscribers
+	rosnode info <node> ->  check the connections -> to: <node>
+				inbound	 ->	publishers
+				outbound ->	subscribers
+4. Time-triggered(rate?) or data-driven(callback?)
+	check the source code	->	ros::Rate means it is time-triggered
+					data-driven just relies on callback
+				check the header (.h) file too in case they define the rate there.
+5. Size of the data in and out (topic_size)
+	rostopic bw <topic> ->	(first line )provide the average bandwidth in Bytes per second
+				(second line) give the size of the message
+				Hence, I can get the frequency of the messages published.
+	rostopic hz <topic> ->  provide the average frequency of the messages being published.
+	If after running the simulation there is no result, that might mean that the node is data-driven.
+
+----------------------------------
+/astar_avoid
+1. /home/srp/autoware.ai/src/autoware/core_planning/waypoint_planner/src/astar_avoid
+
+2. Topics
+input topics:
+ * /base_waypoints [autoware_msgs/Lane]
+ * /clock [rosgraph_msgs/Clock]
+ * /closest_waypoint [std_msgs/Int32]
+ * /current_pose [geometry_msgs/PoseStamped]
+ * /current_velocity [geometry_msgs/TwistStamped]
+ * /obstacle_waypoint [std_msgs/Int32]
+ * /semantics/costmap_generator/occupancy_grid [unknown type]
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+
+output topics:
+ * /rosout [rosgraph_msgs/Log]
+ * /safety_waypoints [autoware_msgs/Lane]
+
+
+astar_avoid is an algorithm that provides the local planner nodes that dynamically plan avoidance behaviour. 
+
+3. Publishers and Subscribers 
+Publishers:
+ * /play_1626069114902029677
+ * /world_to_map
+ * /map_to_mobility
+ * /base_link_to_localizer
+ * /robot_state_publisher
+ * /nmea2tfpose
+ * /ndt_matching
+ * /robot_state_publisher
+ * /pose_relay
+ * /vel_relay
+ * /lane_select
+ * /velocity_set
+
+Subscribers:
+ * /rosout
+ * /velocity_set
+
+Information from command line
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (43717 - 127.0.0.1:35230) [11]
+    * transport: TCPROS
+ * topic: /safety_waypoints
+    * to: /velocity_set
+    * direction: outbound (43717 - 127.0.0.1:35826) [14]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626069114902029677 (http://srp:42217/)
+    * direction: inbound (32994 - srp:38785) [18]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /world_to_map (http://srp:43401/)
+    * direction: inbound (41232 - srp:44667) [19]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /map_to_mobility (http://srp:42207/)
+    * direction: inbound (55780 - srp:43515) [20]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /base_link_to_localizer (http://srp:36165/)
+    * direction: inbound (41786 - srp:35967) [21]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /robot_state_publisher (http://srp:43875/)
+    * direction: inbound (41266 - srp:43843) [22]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /nmea2tfpose (http://srp:46869/)
+    * direction: inbound (57354 - srp:51291) [23]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /ndt_matching (http://srp:38805/)
+    * direction: inbound (40172 - srp:43653) [30]
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /robot_state_publisher (http://srp:43875/)
+    * direction: inbound (41272 - srp:43843) [24]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /pose_relay (http://srp:34489/)
+    * direction: inbound (40458 - srp:50969) [29]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /vel_relay (http://srp:43661/)
+    * direction: inbound (50564 - srp:35047) [28]
+    * transport: TCPROS
+ * topic: /base_waypoints
+    * to: /lane_select (http://srp:42131/)
+    * direction: inbound (41556 - srp:34001) [16]
+    * transport: TCPROS
+ * topic: /closest_waypoint
+    * to: /lane_select (http://srp:42131/)
+    * direction: inbound (41558 - srp:34001) [17]
+    * transport: TCPROS
+ * topic: /obstacle_waypoint
+    * to: /velocity_set (http://srp:39657/)
+    * direction: inbound (44444 - srp:55045) [12]
+    * transport: TCPROS
+
+4. Time triggered at rate of 10Hz
+
+5. How?
+
+

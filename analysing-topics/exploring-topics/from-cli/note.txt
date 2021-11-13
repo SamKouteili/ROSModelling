@@ -1,0 +1,438 @@
+Note to self:
+1. running from command line shows all the parameters being set up from that launch files.
+2. but the node graphs look different, and there are some topics that are nor subscribed yet. 
+
+----------------------------------
+Todo:
+1. 
+
+----------------------------------
+Result from running from quick launch files:
+1. my_map
+srp@srp:~/autoware.ai$ roslaunch autoware_quickstart_examples my_map.launch 
+... logging to /home/srp/.ros/log/d93abf04-e46a-11eb-bc09-7cc2c601eeb4/roslaunch-srp-1785.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://srp:33331/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.11
+
+NODES
+  /
+    map_to_mobility (tf/static_transform_publisher)
+    points_map_loader (map_file/points_map_loader)
+    vector_map_loader (map_file/vector_map_loader)
+    world_to_map (tf/static_transform_publisher)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[world_to_map-1]: started with pid [1802]
+process[map_to_mobility-2]: started with pid [1803]
+process[points_map_loader-3]: started with pid [1812]
+process[vector_map_loader-4]: started with pid [1820]
+^C[vector_map_loader-4] killing on exit
+[points_map_loader-3] killing on exit
+[map_to_mobility-2] killing on exit
+[world_to_map-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+
+2. my_localization
+srp@srp:~/autoware.ai$ roslaunch autoware_quickstart_examples my_localization.launch 
+... logging to /home/srp/.ros/log/d93abf04-e46a-11eb-bc09-7cc2c601eeb4/roslaunch-srp-2680.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://srp:33799/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /ndt_matching/get_height: True
+ * /ndt_matching/gnss_reinit_fitness: 500.0
+ * /ndt_matching/imu_topic: /imu_raw
+ * /ndt_matching/imu_upside_down: False
+ * /ndt_matching/method_type: 0
+ * /ndt_matching/offset: linear
+ * /ndt_matching/output_log_data: False
+ * /ndt_matching/queue_size: 1
+ * /ndt_matching/use_gnss: 1
+ * /ndt_matching/use_imu: False
+ * /ndt_matching/use_local_transform: False
+ * /ndt_matching/use_odom: False
+ * /nmea2tfpose/plane: 7
+ * /robot_description: <?xml version="1....
+ * /rosdistro: melodic
+ * /rosversion: 1.14.11
+ * /use_gui: False
+ * /voxel_grid_filter/measurement_range: 200
+ * /voxel_grid_filter/output_log: False
+ * /voxel_grid_filter/points_topic: points_raw
+
+NODES
+  /
+    base_link_to_localizer (tf/static_transform_publisher)
+    joint_state_publisher (joint_state_publisher/joint_state_publisher)
+    ndt_matching (lidar_localizer/ndt_matching)
+    nmea2tfpose (gnss_localizer/nmea2tfpose)
+    robot_state_publisher (robot_state_publisher/state_publisher)
+    voxel_grid_filter (points_downsampler/voxel_grid_filter)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[base_link_to_localizer-1]: started with pid [2697]
+process[joint_state_publisher-2]: started with pid [2698]
+process[robot_state_publisher-3]: started with pid [2700]
+process[voxel_grid_filter-4]: started with pid [2710]
+process[nmea2tfpose-5]: started with pid [2711]
+[ WARN] [1626244024.306361872]: The 'state_publisher' executable is deprecated. Please use 'robot_state_publisher' instead
+process[ndt_matching-6]: started with pid [2719]
+terminate called after throwing an instance of 'boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::lock_error> >'
+  what():  boost: mutex lock failed in pthread_mutex_lock: Invalid argument
+[ndt_matching-6] process has died [pid 2719, exit code -6, cmd /home/srp/autoware.ai/install/lidar_localizer/lib/lidar_localizer/ndt_matching __name:=ndt_matching __log:=/home/srp/.ros/log/d93abf04-e46a-11eb-bc09-7cc2c601eeb4/ndt_matching-6.log].
+log file: /home/srp/.ros/log/d93abf04-e46a-11eb-bc09-7cc2c601eeb4/ndt_matching-6*.log
+^C[nmea2tfpose-5] killing on exit
+[voxel_grid_filter-4] killing on exit
+[robot_state_publisher-3] killing on exit
+[joint_state_publisher-2] killing on exit
+[base_link_to_localizer-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+
+3. my_detection
+srp@srp:~/autoware.ai$ roslaunch autoware_quickstart_examples my_detection.launch 
+... logging to /home/srp/.ros/log/d93abf04-e46a-11eb-bc09-7cc2c601eeb4/roslaunch-srp-3676.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://srp:45827/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /calibration_publisher/calibration_file: /home/srp/.autowa...
+ * /calibration_publisher/camera_frame: camera
+ * /calibration_publisher/camera_info_topic: /camera_info
+ * /calibration_publisher/image_topic_src: /image_raw
+ * /calibration_publisher/projection_matrix_topic: /projection_matrix
+ * /calibration_publisher/publish_camera_info: True
+ * /calibration_publisher/publish_extrinsic_mat: True
+ * /calibration_publisher/register_lidar2camera_tf: True
+ * /calibration_publisher/target_frame: velodyne
+ * /detection/lidar_detector/cluster_detect_visualization_01/objects_src_topic: /objects
+ * /lidar_euclidean_cluster_detect/clip_max_height: 0.5
+ * /lidar_euclidean_cluster_detect/clip_min_height: -1.3
+ * /lidar_euclidean_cluster_detect/cluster_merge_threshold: 1.5
+ * /lidar_euclidean_cluster_detect/cluster_size_max: 100000
+ * /lidar_euclidean_cluster_detect/cluster_size_min: 20
+ * /lidar_euclidean_cluster_detect/clustering_distance: 0.75
+ * /lidar_euclidean_cluster_detect/clustering_distances: [0.5,1.1,1.6,2.1,...
+ * /lidar_euclidean_cluster_detect/clustering_ranges: [15,30,45,60]
+ * /lidar_euclidean_cluster_detect/downsample_cloud: False
+ * /lidar_euclidean_cluster_detect/keep_lane_left_distance: 5
+ * /lidar_euclidean_cluster_detect/keep_lane_right_distance: 5
+ * /lidar_euclidean_cluster_detect/keep_lanes: False
+ * /lidar_euclidean_cluster_detect/leaf_size: 0.1
+ * /lidar_euclidean_cluster_detect/output_frame: velodyne
+ * /lidar_euclidean_cluster_detect/points_node: /points_raw
+ * /lidar_euclidean_cluster_detect/pose_estimation: True
+ * /lidar_euclidean_cluster_detect/remove_ground: True
+ * /lidar_euclidean_cluster_detect/remove_points_upto: 0.0
+ * /lidar_euclidean_cluster_detect/use_diffnormals: False
+ * /lidar_euclidean_cluster_detect/use_gpu: False
+ * /lidar_euclidean_cluster_detect/use_multiple_thres: False
+ * /rosdistro: melodic
+ * /rosversion: 1.14.11
+
+NODES
+  /
+    calibration_publisher (calibration_publisher/calibration_publisher)
+    lidar_euclidean_cluster_detect (lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect)
+    points2image (points2image/points2image)
+  /detection/lidar_detector/
+    cluster_detect_visualization_01 (detected_objects_visualizer/visualize_detected_objects)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[calibration_publisher-1]: started with pid [3693]
+process[points2image-2]: started with pid [3694]
+process[lidar_euclidean_cluster_detect-3]: started with pid [3695]
+[ INFO] [1626244144.633827485]: [calibration_publisher] camera_frame: 'camera'
+[ INFO] [1626244144.638395988]: [calibration_publisher] target_frame: 'velodyne'
+process[detection/lidar_detector/cluster_detect_visualization_01-4]: started with pid [3710]
+[ INFO] [1626244144.640835499]: [calibration_publisher] calibration_file: '/home/srp/.autoware/data/calibration/camera_lidar_3d/prius/nic-150407.yml'
+[ INFO] [1626244144.642735044]: [calibration_publisher] image_topic_name: /image_raw
+[ INFO] [1626244144.644907329]: [calibration_publisher] camera_info_name: /camera_info
+[ INFO] [1626244144.647349050]: [calibration_publisher] projection_matrix_topic: /projection_matrix
+[ INFO] [1626244144.669926884]: [visualize_detected_objects] objects_src_topic: /detection/lidar_detector/objects
+[ INFO] [1626244144.675210436]: [visualize_detected_objects] object_speed_threshold: 0.10
+[ INFO] [1626244144.680307300]: [visualize_detected_objects] arrow_speed_threshold: 0.25
+[ INFO] [1626244144.683015082]: [visualize_detected_objects] marker_display_duration: 0.20
+[ INFO] [1626244144.686151748]: [visualize_detected_objects] label_color: {R:255.0, G:255.0, B:255.0, A:1.0}
+[ INFO] [1626244144.689030679]: [visualize_detected_objects] arrow_color: {R:0.0, G:255.0, B:0.0, A:0.8}
+[ INFO] [1626244144.690971618]: [visualize_detected_objects] hull_color: {R:51.0, G:204.0, B:51.0, A:0.8}
+[ INFO] [1626244144.692541614]: [visualize_detected_objects] box_color: {R:51.0, G:128.0, B:204.0, A:0.8}
+[ INFO] [1626244144.694378023]: [visualize_detected_objects] model_color: {R:190.0, G:190.0, B:190.0, A:0.5}
+[ INFO] [1626244144.696271419]: [visualize_detected_objects] centroid_color: {R:77.0, G:121.0, B:255.0, A:0.8}
+[ INFO] [1626244144.707997445]: [visualize_detected_objects] object_src_topic: /detection/lidar_detector/objects
+[ INFO] [1626244144.709816793]: [visualize_detected_objects] markers_out_topic: /detection/lidar_detector/objects_markers
+[ INFO] [1626244150.868893933]: euclidean_cluster > Setting points node to /points_raw
+[ INFO] [1626244150.871292689]: Euclidean Clustering: Difference of Normals will not be used.
+[ INFO] [1626244150.872849784]: [euclidean_clustering] downsample_cloud: 0
+[ INFO] [1626244150.874190923]: [euclidean_clustering] remove_ground: 1
+[ INFO] [1626244150.875713219]: [euclidean_clustering] leaf_size: 0.100000
+[ INFO] [1626244150.877075071]: [euclidean_clustering] cluster_size_min 20
+[ INFO] [1626244150.878338520]: [euclidean_clustering] cluster_size_max: 100000
+[ INFO] [1626244150.879685277]: [euclidean_clustering] pose_estimation: 1
+[ INFO] [1626244150.881177921]: [euclidean_clustering] clip_min_height: -1.300000
+[ INFO] [1626244150.882464579]: [euclidean_clustering] clip_max_height: 0.500000
+[ INFO] [1626244150.883896817]: [euclidean_clustering] keep_lanes: 0
+[ INFO] [1626244150.885406190]: [euclidean_clustering] keep_lane_left_distance: 5.000000
+[ INFO] [1626244150.886683011]: [euclidean_clustering] keep_lane_right_distance: 5.000000
+[ INFO] [1626244150.888144766]: [euclidean_clustering] cluster_merge_threshold: 1.500000
+[ INFO] [1626244150.889722190]: [euclidean_clustering] output_frame: velodyne
+[ INFO] [1626244150.891132398]: [euclidean_clustering] remove_points_upto: 0.000000
+[ INFO] [1626244150.892749900]: [euclidean_clustering] clustering_distance: 0.750000
+[ INFO] [1626244150.894226958]: [euclidean_clustering] use_gpu: 0
+[ INFO] [1626244150.896719041]: [euclidean_clustering] use_multiple_thres: 0
+[ INFO] [1626244150.899527910]: [euclidean_clustering] clustering_distances: [0.5,1.1,1.6,2.1,2.6]
+[ INFO] [1626244150.901832911]: [euclidean_clustering] clustering_ranges: [15,30,45,60]
+^C[detection/lidar_detector/cluster_detect_visualization_01-4] killing on exit
+[lidar_euclidean_cluster_detect-3] killing on exit
+[points2image-2] killing on exit
+[calibration_publisher-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+
+4. my_motion_planning
+srp@srp:~/autoware.ai$ roslaunch autoware_quickstart_examples my_motion_planning.launch 
+... logging to /home/srp/.ros/log/d93abf04-e46a-11eb-bc09-7cc2c601eeb4/roslaunch-srp-4731.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://srp:44113/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /astar_avoid/angle_goal_range: 6.0
+ * /astar_avoid/avoid_start_velocity: 3.0
+ * /astar_avoid/avoid_waypoints_velocity: 10.0
+ * /astar_avoid/closest_search_size: 30
+ * /astar_avoid/curve_weight: 1.2
+ * /astar_avoid/distance_heuristic_weight: 1.0
+ * /astar_avoid/enable_avoidance: False
+ * /astar_avoid/lateral_goal_range: 0.5
+ * /astar_avoid/longitudinal_goal_range: 2.0
+ * /astar_avoid/minimum_turning_radius: 6.0
+ * /astar_avoid/obstacle_threshold: 100
+ * /astar_avoid/potential_weight: 10.0
+ * /astar_avoid/replan_interval: 2.0
+ * /astar_avoid/reverse_weight: 2.0
+ * /astar_avoid/robot_base2back: 1.0
+ * /astar_avoid/robot_length: 4.5
+ * /astar_avoid/robot_width: 1.75
+ * /astar_avoid/safety_waypoints_size: 100
+ * /astar_avoid/search_waypoints_delta: 2
+ * /astar_avoid/search_waypoints_size: 50
+ * /astar_avoid/theta_size: 48
+ * /astar_avoid/time_limit: 1000.0
+ * /astar_avoid/update_rate: 10
+ * /astar_avoid/use_back: False
+ * /astar_avoid/use_potential_heuristic: True
+ * /astar_avoid/use_wavefront_heuristic: False
+ * /pure_pursuit/add_virtual_end_waypoints: False
+ * /pure_pursuit/const_lookahead_distance: 4.0
+ * /pure_pursuit/const_velocity: 5.0
+ * /pure_pursuit/is_linear_interpolation: True
+ * /pure_pursuit/lookahead_ratio: 2.0
+ * /pure_pursuit/minimum_lookahead_distance: 6.0
+ * /pure_pursuit/publishes_for_steering_robot: False
+ * /pure_pursuit/velocity_source: 0
+ * /rosdistro: melodic
+ * /rosversion: 1.14.11
+ * /twist_filter/lateral_accel_limit: 5.0
+ * /twist_filter/lateral_jerk_limit: 5.0
+ * /twist_filter/lowpass_gain_angular_z: 0.0
+ * /twist_filter/lowpass_gain_linear_x: 0.0
+ * /twist_filter/lowpass_gain_steering_angle: 0.0
+ * /twist_gate/loop_rate: 30.0
+ * /twist_gate/use_decision_maker: False
+ * /vehicle_info/wheel_base: 2.7
+ * /velocity_set/decelerate_vel_min: 1.3
+ * /velocity_set/deceleration_obstacle: 0.8
+ * /velocity_set/deceleration_range: 0
+ * /velocity_set/deceleration_stopline: 0.6
+ * /velocity_set/detection_height_bottom: -1.7
+ * /velocity_set/detection_height_top: 0.2
+ * /velocity_set/detection_range: 1.3
+ * /velocity_set/enable_multiple_crosswalk_detection: True
+ * /velocity_set/points_threshold: 10
+ * /velocity_set/points_topic: points_no_ground
+ * /velocity_set/remove_points_upto: 2.3
+ * /velocity_set/stop_distance_obstacle: 10.0
+ * /velocity_set/stop_distance_stopline: 5.0
+ * /velocity_set/temporal_waypoints_size: 100
+ * /velocity_set/use_crosswalk_detection: True
+ * /velocity_set/velocity_change_limit: 9.972
+ * /velocity_set/velocity_offset: 1.2
+
+NODES
+  /
+    astar_avoid (waypoint_planner/astar_avoid)
+    config_waypoint_follower_rostopic (rostopic/rostopic)
+    pure_pursuit (pure_pursuit/pure_pursuit)
+    twist_filter (twist_filter/twist_filter)
+    twist_gate (twist_gate/twist_gate)
+    vehicle_receiver (vehicle_socket/vehicle_receiver)
+    vehicle_sender (vehicle_socket/vehicle_sender)
+    velocity_set (waypoint_planner/velocity_set)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[vehicle_receiver-1]: started with pid [4748]
+process[vehicle_sender-2]: started with pid [4749]
+process[astar_avoid-3]: started with pid [4750]
+process[velocity_set-4]: started with pid [4763]
+process[config_waypoint_follower_rostopic-5]: started with pid [4780]
+process[pure_pursuit-6]: started with pid [4792]
+process[twist_filter-7]: started with pid [4807]
+process[twist_gate-8]: started with pid [4829]
+[ WARN] [1626244230.504632062]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.538034142]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.571369916]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.590731756]: Waiting for subscribing topics...
+[ WARN] [1626244230.604692377]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.638030371]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.671365777]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.704694646]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.738035810]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.771426511]: Necessary topics are not subscribed yet ... 
+[ INFO] [1626244230.804562726]: All VectorMap loaded
+[ WARN] [1626244230.804694483]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.838071215]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.871498038]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.904694270]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.938387452]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244230.971364412]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.005003608]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.038025792]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.071744031]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.105047425]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.138027696]: Necessary topics are not subscribed yet ... 
+[ INFO] [1626244231.143182504]: Set cross walk detection points
+[ WARN] [1626244231.171712643]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.205051372]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.238024395]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.271372053]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.304696714]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.338023503]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.371355779]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.404700063]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.438026641]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.471364463]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.506526776]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.538026296]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.571368031]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.595096335]: Waiting for subscribing topics...
+[ WARN] [1626244231.604685710]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.638226942]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.671570360]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.704695948]: Necessary topics are not subscribed yet ... 
+[ WARN] [1626244231.738094797]: Necessary topics are not subscribed yet ... 
+
+4.my_mission_planning
+srp@srp:~/autoware.ai$ roslaunch autoware_quickstart_examples my_mission_planning.launch 
+... logging to /home/srp/.ros/log/d93abf04-e46a-11eb-bc09-7cc2c601eeb4/roslaunch-srp-4142.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://srp:32825/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.11
+ * /waypoint_loader/multi_lane_csv: /home/srp/.autowa...
+ * /waypoint_replanner/accel_limit: 0.5
+ * /waypoint_replanner/braking_distance: 5
+ * /waypoint_replanner/decel_limit: 0.3
+ * /waypoint_replanner/end_point_offset: 1
+ * /waypoint_replanner/overwrite_vmax_mode: False
+ * /waypoint_replanner/radius_min: 6
+ * /waypoint_replanner/radius_thresh: 20
+ * /waypoint_replanner/realtime_tuning_mode: False
+ * /waypoint_replanner/replan_curve_mode: False
+ * /waypoint_replanner/replan_endpoint_mode: True
+ * /waypoint_replanner/replanning_mode: False
+ * /waypoint_replanner/resample_interval: 1.0
+ * /waypoint_replanner/resample_mode: True
+ * /waypoint_replanner/use_decision_maker: False
+ * /waypoint_replanner/velocity_max: 20
+ * /waypoint_replanner/velocity_min: 4
+ * /waypoint_replanner/velocity_offset: 4
+
+NODES
+  /
+    can_status_translator (autoware_connector/can_status_translator)
+    config_waypoint_loader_rostopic (rostopic/rostopic)
+    lane_rule (lane_planner/lane_rule)
+    lane_select (lane_planner/lane_select)
+    lane_stop (lane_planner/lane_stop)
+    pose_relay (topic_tools/relay)
+    vel_relay (topic_tools/relay)
+    waypoint_loader (waypoint_maker/waypoint_loader)
+    waypoint_marker_publisher (waypoint_maker/waypoint_marker_publisher)
+    waypoint_replanner (waypoint_maker/waypoint_replanner)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[can_status_translator-1]: started with pid [4159]
+process[pose_relay-2]: started with pid [4160]
+process[vel_relay-3]: started with pid [4166]
+process[config_waypoint_loader_rostopic-4]: started with pid [4189]
+process[waypoint_loader-5]: started with pid [4213]
+process[waypoint_replanner-6]: started with pid [4225]
+process[waypoint_marker_publisher-7]: started with pid [4237]
+[ INFO] [1626244206.473252811]: verify...
+process[lane_rule-8]: started with pid [4246]
+[ INFO] [1626244206.478599514]: columns size: 3
+[ INFO] [1626244206.478665717]: format: 0
+[ INFO] [1626244206.479825159]: lane data is valid. publishing...
+[ INFO] [1626244206.479873756]: columns size: 3
+process[lane_stop-9]: started with pid [4267]
+process[lane_select-10]: started with pid [4283]
+[ WARN] [1626244210.742075189]: Necessary topics are not subscribed yet. Waiting...
+^C[lane_select-10] killing on exit
+[lane_stop-9] killing on exit
+[lane_rule-8] killing on exit
+[waypoint_marker_publisher-7] killing on exit
+[waypoint_replanner-6] killing on exit
+[waypoint_loader-5] killing on exit
+[config_waypoint_loader_rostopic-4] killing on exit
+[vel_relay-3] killing on exit
+[pose_relay-2] killing on exit
+[can_status_translator-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+

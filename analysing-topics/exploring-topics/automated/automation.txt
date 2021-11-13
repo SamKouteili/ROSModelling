@@ -1,0 +1,20 @@
+To automate the analysis for nodes:
+1. use redirection operator to copy the standard output into an existing file.
+2. use touch command to create empty file
+	touch - file with no content - touch "${NODE}_file"
+	cat - file with content
+3. use while loop t oread input_text per line
+	https://www.shellscript.sh/loops.html
+4. use if then else also
+5. use while [ "$#" -gt "0 ] until the list is empty
+6. use the backtick ` to run the command and save ist i na variable or something
+	https://www.shellscript.sh/functions.html use the commion.lib 
+7. To check the message type
+	rosmsg show <msg> 
+	if from topic:
+		rostopic type <topic> | rosmsg show
+
+
+A possible thing to do:
+1. write a scripe to automatically calculate how many bit is the message
+

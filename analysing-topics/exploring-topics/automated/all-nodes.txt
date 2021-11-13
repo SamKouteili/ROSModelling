@@ -1,0 +1,2710 @@
+--------------------------------------------------------------------------------
+Node [/astar_avoid]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /safety_waypoints [autoware_msgs/Lane]
+
+Subscriptions: 
+ * /base_waypoints [autoware_msgs/Lane]
+ * /clock [rosgraph_msgs/Clock]
+ * /closest_waypoint [std_msgs/Int32]
+ * /current_pose [geometry_msgs/PoseStamped]
+ * /current_velocity [geometry_msgs/TwistStamped]
+ * /obstacle_waypoint [std_msgs/Int32]
+ * /semantics/costmap_generator/occupancy_grid [unknown type]
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+
+Services: 
+ * /astar_avoid/get_loggers
+ * /astar_avoid/set_logger_level
+
+
+contacting node http://srp:38053/ ...
+Pid: 12967
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (41867 - 127.0.0.1:40950) [18]
+    * transport: TCPROS
+ * topic: /safety_waypoints
+    * to: /velocity_set
+    * direction: outbound (41867 - 127.0.0.1:41680) [15]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35288 - srp:38543) [16]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /world_to_map (http://srp:37421/)
+    * direction: inbound (38760 - srp:42131) [19]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /map_to_mobility (http://srp:39299/)
+    * direction: inbound (42660 - srp:59671) [20]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /base_link_to_localizer (http://srp:38229/)
+    * direction: inbound (39326 - srp:37245) [21]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /robot_state_publisher (http://srp:32807/)
+    * direction: inbound (46788 - srp:40007) [22]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /nmea2tfpose (http://srp:40373/)
+    * direction: inbound (57170 - srp:37671) [23]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (50162 - srp:56831) [29]
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /robot_state_publisher (http://srp:32807/)
+    * direction: inbound (46794 - srp:40007) [24]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /pose_relay (http://srp:41033/)
+    * direction: inbound (44394 - srp:56179) [28]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /vel_relay (http://srp:39033/)
+    * direction: inbound (33490 - srp:45923) [27]
+    * transport: TCPROS
+ * topic: /base_waypoints
+    * to: /lane_select (http://srp:46375/)
+    * direction: inbound (35172 - srp:41917) [10]
+    * transport: TCPROS
+ * topic: /closest_waypoint
+    * to: /lane_select (http://srp:46375/)
+    * direction: inbound (35180 - srp:41917) [17]
+    * transport: TCPROS
+ * topic: /obstacle_waypoint
+    * to: /velocity_set (http://srp:44387/)
+    * direction: inbound (50172 - srp:49353) [11]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/base_link_to_localizer]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /tf [tf2_msgs/TFMessage]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /base_link_to_localizer/get_loggers
+ * /base_link_to_localizer/set_logger_level
+
+
+contacting node http://srp:38229/ ...
+Pid: 11978
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (37245 - 127.0.0.1:37170) [10]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /rviz_1626322140673293607
+    * direction: outbound (37245 - 127.0.0.1:37178) [11]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (37245 - 127.0.0.1:37662) [14]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /astar_avoid
+    * direction: outbound (37245 - 127.0.0.1:39326) [15]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33142 - srp:38543) [13]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/calibration_publisher]
+Publications: 
+ * /camera_info [sensor_msgs/CameraInfo]
+ * /projection_matrix [autoware_msgs/ProjectionMatrix]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /image_raw [unknown type]
+
+Services: 
+ * /calibration_publisher/get_loggers
+ * /calibration_publisher/set_logger_level
+
+
+contacting node http://srp:37071/ ...
+Pid: 12270
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (55573 - 127.0.0.1:51248) [10]
+    * transport: TCPROS
+ * topic: /camera_info
+    * to: /points2image
+    * direction: outbound (55573 - 127.0.0.1:51266) [16]
+    * transport: TCPROS
+ * topic: /projection_matrix
+    * to: /points2image
+    * direction: outbound (55573 - 127.0.0.1:51260) [15]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33614 - srp:38543) [14]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/can_status_translator]
+Publications: 
+ * /can_velocity [geometry_msgs/TwistStamped]
+ * /linear_velocity_viz [std_msgs/Float32]
+ * /rosout [rosgraph_msgs/Log]
+ * /vehicle_status [autoware_msgs/VehicleStatus]
+
+Subscriptions: 
+ * /can_info [autoware_can_msgs/CANInfo]
+ * /clock [rosgraph_msgs/Clock]
+ * /vehicle_status [autoware_msgs/VehicleStatus]
+
+Services: 
+ * /can_status_translator/get_loggers
+ * /can_status_translator/set_logger_level
+
+
+contacting node http://srp:36873/ ...
+Pid: 12459
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (44549 - 127.0.0.1:43182) [14]
+    * transport: TCPROS
+ * topic: /linear_velocity_viz
+    * to: /rviz_1626322140673293607
+    * direction: outbound (44549 - 127.0.0.1:43380) [11]
+    * transport: TCPROS
+ * topic: /vehicle_status
+    * to: /can_status_translator
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34308 - srp:38543) [12]
+    * transport: TCPROS
+ * topic: /can_info
+    * to: /vehicle_receiver (http://srp:39915/)
+    * direction: inbound (44594 - srp:41105) [16]
+    * transport: TCPROS
+ * topic: /vehicle_status
+    * to: /can_status_translator (http://srp:36873/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+
+--------------------------------------------------------------------------------
+Node [/config_waypoint_follower_rostopic]
+Publications: 
+ * /config/waypoint_follower [autoware_config_msgs/ConfigWaypointFollower]
+
+Subscriptions: None
+
+Services: 
+ * /config_waypoint_follower_rostopic/get_loggers
+ * /config_waypoint_follower_rostopic/set_logger_level
+
+
+contacting node http://srp:35817/ ...
+Pid: 12990
+Connections:
+ * topic: /config/waypoint_follower
+    * to: /pure_pursuit
+    * direction: outbound (38187 - 127.0.0.1:38134) [6]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/config_waypoint_loader_rostopic]
+Publications: 
+ * /config/waypoint_replanner [autoware_config_msgs/ConfigWaypointReplanner]
+
+Subscriptions: None
+
+Services: 
+ * /config_waypoint_loader_rostopic/get_loggers
+ * /config_waypoint_loader_rostopic/set_logger_level
+
+
+contacting node http://srp:46407/ ...
+Pid: 12487
+Connections:
+ * topic: /config/waypoint_replanner
+    * to: /waypoint_replanner
+    * direction: outbound (39955 - 127.0.0.1:56236) [6]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/detection/lidar_detector/cluster_detect_visualization_01]
+Publications: 
+ * /detection/lidar_detector/objects_markers [visualization_msgs/MarkerArray]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /detection/lidar_detector/objects [autoware_msgs/DetectedObjectArray]
+
+Services: 
+ * /detection/lidar_detector/cluster_detect_visualization_01/get_loggers
+ * /detection/lidar_detector/cluster_detect_visualization_01/set_logger_level
+
+
+contacting node http://srp:46261/ ...
+Pid: 12291
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (50989 - 127.0.0.1:37346) [10]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33610 - srp:38543) [12]
+    * transport: TCPROS
+ * topic: /detection/lidar_detector/objects
+    * to: /lidar_euclidean_cluster_detect (http://srp:41139/)
+    * direction: inbound (34024 - srp:36011) [14]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/joint_state_publisher]
+Publications: 
+ * /joint_states [sensor_msgs/JointState]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /joint_state_publisher/get_loggers
+ * /joint_state_publisher/set_logger_level
+
+
+contacting node http://srp:35159/ ...
+Pid: 11979
+Connections:
+ * topic: /joint_states
+    * to: /robot_state_publisher
+    * direction: outbound (33777 - 127.0.0.1:37938) [11]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (33777 - 127.0.0.1:37772) [8]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/lane_rule]
+Publications: 
+ * /green_waypoints_array [autoware_msgs/LaneArray]
+ * /red_waypoints_array [autoware_msgs/LaneArray]
+ * /rosout [rosgraph_msgs/Log]
+ * /traffic_waypoints_array [autoware_msgs/LaneArray]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/lane_rule [autoware_config_msgs/ConfigLaneRule]
+ * /lane_waypoints_array [autoware_msgs/LaneArray]
+ * /vector_map_info/dtlane [vector_map_msgs/DTLaneArray]
+ * /vector_map_info/lane [vector_map_msgs/LaneArray]
+ * /vector_map_info/node [vector_map_msgs/NodeArray]
+ * /vector_map_info/point [vector_map_msgs/PointArray]
+ * /vector_map_info/stop_line [vector_map_msgs/StopLineArray]
+
+Services: 
+ * /lane_rule/get_loggers
+ * /lane_rule/set_logger_level
+
+
+contacting node http://srp:42055/ ...
+Pid: 12534
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (57645 - 127.0.0.1:35222) [14]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /waypoint_marker_publisher
+    * direction: outbound (57645 - 127.0.0.1:35416) [22]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /lane_select
+    * direction: outbound (57645 - 127.0.0.1:35476) [11]
+    * transport: TCPROS
+ * topic: /red_waypoints_array
+    * to: /lane_stop
+    * direction: outbound (57645 - 127.0.0.1:35486) [16]
+    * transport: TCPROS
+ * topic: /green_waypoints_array
+    * to: /lane_stop
+    * direction: outbound (57645 - 127.0.0.1:35488) [13]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34368 - srp:38543) [10]
+    * transport: TCPROS
+ * topic: /lane_waypoints_array
+    * to: /waypoint_replanner (http://srp:42345/)
+    * direction: inbound (51466 - srp:60447) [24]
+    * transport: TCPROS
+ * topic: /vector_map_info/point
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (49130 - srp:45705) [25]
+    * transport: TCPROS
+ * topic: /vector_map_info/lane
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (49132 - srp:45705) [26]
+    * transport: TCPROS
+ * topic: /vector_map_info/node
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (49136 - srp:45705) [27]
+    * transport: TCPROS
+ * topic: /vector_map_info/stop_line
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (49140 - srp:45705) [28]
+    * transport: TCPROS
+ * topic: /vector_map_info/dtlane
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (49394 - srp:45705) [17]
+    * transport: TCPROS
+ * topic: /config/lane_rule
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (53716 - srp:41241) [18]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/lane_select]
+Publications: 
+ * /base_waypoints [autoware_msgs/Lane]
+ * /change_flag [std_msgs/Int32]
+ * /closest_waypoint [std_msgs/Int32]
+ * /current_lane_id [std_msgs/Int32]
+ * /lane_select_marker [visualization_msgs/MarkerArray]
+ * /rosout [rosgraph_msgs/Log]
+ * /vehicle_location [autoware_msgs/VehicleLocation]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/lane_select [autoware_config_msgs/ConfigLaneSelect]
+ * /current_pose [geometry_msgs/PoseStamped]
+ * /current_velocity [geometry_msgs/TwistStamped]
+ * /decision_maker/state [unknown type]
+ * /state [unknown type]
+ * /traffic_waypoints_array [autoware_msgs/LaneArray]
+
+Services: 
+ * /lane_select/get_loggers
+ * /lane_select/set_logger_level
+
+
+contacting node http://srp:46375/ ...
+Pid: 12577
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (41917 - 127.0.0.1:33684) [13]
+    * transport: TCPROS
+ * topic: /base_waypoints
+    * to: /astar_avoid
+    * direction: outbound (41917 - 127.0.0.1:35172) [16]
+    * transport: TCPROS
+ * topic: /closest_waypoint
+    * to: /waypoint_marker_publisher
+    * direction: outbound (41917 - 127.0.0.1:34144) [10]
+    * transport: TCPROS
+ * topic: /closest_waypoint
+    * to: /astar_avoid
+    * direction: outbound (41917 - 127.0.0.1:35180) [14]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34554 - srp:38543) [17]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /lane_stop (http://srp:46465/)
+    * direction: inbound (53154 - srp:59371) [18]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /lane_rule (http://srp:42055/)
+    * direction: inbound (35476 - srp:57645) [19]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /pose_relay (http://srp:41033/)
+    * direction: inbound (44382 - srp:56179) [23]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /vel_relay (http://srp:39033/)
+    * direction: inbound (33478 - srp:45923) [22]
+    * transport: TCPROS
+ * topic: /config/lane_select
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (53454 - srp:41241) [11]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/lane_stop]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /traffic_waypoints_array [autoware_msgs/LaneArray]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/lane_stop [unknown type]
+ * /green_waypoints_array [autoware_msgs/LaneArray]
+ * /light_color [unknown type]
+ * /light_color_managed [autoware_msgs/TrafficLight]
+ * /red_waypoints_array [autoware_msgs/LaneArray]
+
+Services: 
+ * /lane_stop/get_loggers
+ * /lane_stop/set_logger_level
+
+
+contacting node http://srp:46465/ ...
+Pid: 12547
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (59371 - 127.0.0.1:52908) [15]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /waypoint_marker_publisher
+    * direction: outbound (59371 - 127.0.0.1:53096) [17]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /lane_select
+    * direction: outbound (59371 - 127.0.0.1:53154) [10]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34556 - srp:38543) [12]
+    * transport: TCPROS
+ * topic: /light_color_managed
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (53466 - srp:41241) [18]
+    * transport: TCPROS
+ * topic: /red_waypoints_array
+    * to: /lane_rule (http://srp:42055/)
+    * direction: inbound (35486 - srp:57645) [19]
+    * transport: TCPROS
+ * topic: /green_waypoints_array
+    * to: /lane_rule (http://srp:42055/)
+    * direction: inbound (35488 - srp:57645) [20]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/lidar_euclidean_cluster_detect]
+Publications: 
+ * /cluster_centroids [autoware_msgs/Centroids]
+ * /detection/lidar_detector/cloud_clusters [autoware_msgs/CloudClusterArray]
+ * /detection/lidar_detector/objects [autoware_msgs/DetectedObjectArray]
+ * /points_cluster [sensor_msgs/PointCloud2]
+ * /points_ground [sensor_msgs/PointCloud2]
+ * /points_lanes [sensor_msgs/PointCloud2]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /points_raw [sensor_msgs/PointCloud2]
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+
+Services: 
+ * /lidar_euclidean_cluster_detect/get_loggers
+ * /lidar_euclidean_cluster_detect/set_logger_level
+
+
+contacting node http://srp:41139/ ...
+Pid: 12273
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (36011 - 127.0.0.1:59914) [34]
+    * transport: TCPROS
+ * topic: /points_cluster
+    * to: /rviz_1626322140673293607
+    * direction: outbound (36011 - 127.0.0.1:34018) [40]
+    * transport: TCPROS
+ * topic: /detection/lidar_detector/objects
+    * to: /detection/lidar_detector/cluster_detect_visualization_01
+    * direction: outbound (36011 - 127.0.0.1:34024) [38]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33620 - srp:38543) [30]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /world_to_map (http://srp:37421/)
+    * direction: inbound (37088 - srp:42131) [31]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /map_to_mobility (http://srp:39299/)
+    * direction: inbound (40992 - srp:59671) [32]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /base_link_to_localizer (http://srp:38229/)
+    * direction: inbound (37662 - srp:37245) [35]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /robot_state_publisher (http://srp:32807/)
+    * direction: inbound (45122 - srp:40007) [33]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /nmea2tfpose (http://srp:40373/)
+    * direction: inbound (55504 - srp:37671) [36]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (50144 - srp:56831) [42]
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /robot_state_publisher (http://srp:32807/)
+    * direction: inbound (45126 - srp:40007) [37]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound (34592 - srp:57869) [16]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35976 - srp:38543) [41]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/map_to_mobility]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /tf [tf2_msgs/TFMessage]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /map_to_mobility/get_loggers
+ * /map_to_mobility/set_logger_level
+
+
+contacting node http://srp:39299/ ...
+Pid: 11516
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (59671 - 127.0.0.1:39566) [10]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /rviz_1626322140673293607
+    * direction: outbound (59671 - 127.0.0.1:39396) [13]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (59671 - 127.0.0.1:40992) [14]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /astar_avoid
+    * direction: outbound (59671 - 127.0.0.1:42660) [15]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (60428 - srp:38543) [12]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/ndt_matching]
+Publications: 
+ * /estimate_twist [geometry_msgs/TwistStamped]
+ * /estimated_vel [geometry_msgs/Vector3Stamped]
+ * /estimated_vel_kmph [std_msgs/Float32]
+ * /estimated_vel_mps [std_msgs/Float32]
+ * /localizer_pose [geometry_msgs/PoseStamped]
+ * /ndt_pose [geometry_msgs/PoseStamped]
+ * /ndt_reliability [std_msgs/Float32]
+ * /ndt_stat [autoware_msgs/NDTStat]
+ * /node_status [autoware_system_msgs/NodeStatus]
+ * /predict_pose [geometry_msgs/PoseStamped]
+ * /predict_pose_imu [geometry_msgs/PoseStamped]
+ * /predict_pose_imu_odom [geometry_msgs/PoseStamped]
+ * /predict_pose_odom [geometry_msgs/PoseStamped]
+ * /rosout [rosgraph_msgs/Log]
+ * /tf [tf2_msgs/TFMessage]
+ * /time_ndt_matching [std_msgs/Float32]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/ndt [autoware_config_msgs/ConfigNDT]
+ * /filtered_points [sensor_msgs/PointCloud2]
+ * /gnss_pose [geometry_msgs/PoseStamped]
+ * /imu_raw [unknown type]
+ * /initialpose [geometry_msgs/PoseWithCovarianceStamped]
+ * /points_map [sensor_msgs/PointCloud2]
+ * /vehicle/odom [unknown type]
+
+Services: 
+ * /ndt_matching/get_loggers
+ * /ndt_matching/set_logger_level
+
+
+contacting node http://srp:42473/ ...
+Pid: 12002
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (56831 - 127.0.0.1:46968) [19]
+    * transport: TCPROS
+ * topic: /ndt_pose
+    * to: /pose_relay
+    * direction: outbound (56831 - 127.0.0.1:48148) [12]
+    * transport: TCPROS
+ * topic: /localizer_pose
+    * to: /velocity_set
+    * direction: outbound (56831 - 127.0.0.1:49632) [14]
+    * transport: TCPROS
+ * topic: /estimate_twist
+    * to: /vel_relay
+    * direction: outbound (56831 - 127.0.0.1:48154) [10]
+    * transport: TCPROS
+ * topic: /time_ndt_matching
+    * to: /rviz_1626322140673293607
+    * direction: outbound (56831 - 127.0.0.1:46986) [23]
+    * transport: TCPROS
+ * topic: /ndt_stat
+    * to: /runime_manager_1866_1626318804810
+    * direction: outbound (56831 - 127.0.0.1:46942) [18]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /rviz_1626322140673293607
+    * direction: outbound (56831 - 127.0.0.1:50142) [26]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (56831 - 127.0.0.1:50144) [15]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /astar_avoid
+    * direction: outbound (56831 - 127.0.0.1:50162) [17]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33170 - srp:38543) [13]
+    * transport: TCPROS
+ * topic: /config/ndt
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (52026 - srp:41241) [20]
+    * transport: TCPROS
+ * topic: /gnss_pose
+    * to: /nmea2tfpose (http://srp:40373/)
+    * direction: inbound (55042 - srp:37671) [21]
+    * transport: TCPROS
+ * topic: /initialpose
+    * to: /rviz_1626322140673293607 (http://srp:45799/)
+    * direction: inbound (56414 - srp:49635) [22]
+    * transport: TCPROS
+ * topic: /filtered_points
+    * to: /voxel_grid_filter (http://srp:36803/)
+    * direction: inbound (55624 - srp:33089) [24]
+    * transport: TCPROS
+ * topic: /points_map
+    * to: /points_map_loader (http://srp:34067/)
+    * direction: inbound (37620 - srp:58473) [16]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/nmea2tfpose]
+Publications: 
+ * /gnss_pose [geometry_msgs/PoseStamped]
+ * /rosout [rosgraph_msgs/Log]
+ * /tf [tf2_msgs/TFMessage]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /nmea_sentence [nmea_msgs/Sentence]
+
+Services: 
+ * /nmea2tfpose/get_loggers
+ * /nmea2tfpose/set_logger_level
+
+
+contacting node http://srp:40373/ ...
+Pid: 12000
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (37671 - 127.0.0.1:55012) [15]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /rviz_1626322140673293607
+    * direction: outbound (37671 - 127.0.0.1:55040) [10]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (37671 - 127.0.0.1:55504) [14]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /astar_avoid
+    * direction: outbound (37671 - 127.0.0.1:57170) [17]
+    * transport: TCPROS
+ * topic: /gnss_pose
+    * to: /ndt_matching
+    * direction: outbound (37671 - 127.0.0.1:55042) [11]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33152 - srp:38543) [12]
+    * transport: TCPROS
+ * topic: /nmea_sentence
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33156 - srp:38543) [16]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/play_1626322134638620190]
+Publications: 
+ * /clock [rosgraph_msgs/Clock]
+ * /nmea_sentence [nmea_msgs/Sentence]
+ * /points_raw [sensor_msgs/PointCloud2]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /play_1626322134638620190/get_loggers
+ * /play_1626322134638620190/pause_playback
+ * /play_1626322134638620190/set_logger_level
+
+
+contacting node http://srp:37573/ ...
+Pid: 10928
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (38543 - 127.0.0.1:59120) [18]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /clock
+    * to: /rviz_1626322140673293607
+    * direction: outbound (38543 - 127.0.0.1:59164) [20]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /map_to_mobility
+    * direction: outbound (38543 - 127.0.0.1:60428) [67]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /world_to_map
+    * direction: outbound (38543 - 127.0.0.1:60432) [10]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /vector_map_loader
+    * direction: outbound (38543 - 127.0.0.1:60436) [64]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /velodyne_nodelet_manager_driver
+    * direction: outbound (38543 - 127.0.0.1:60890) [70]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /velodyne_nodelet_manager
+    * direction: outbound (38543 - 127.0.0.1:60916) [66]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /velodyne_nodelet
+    * direction: outbound (38543 - 127.0.0.1:60922) [69]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /base_link_to_localizer
+    * direction: outbound (38543 - 127.0.0.1:33142) [77]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /robot_state_publisher
+    * direction: outbound (38543 - 127.0.0.1:33144) [68]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /nmea2tfpose
+    * direction: outbound (38543 - 127.0.0.1:33152) [71]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /voxel_grid_filter
+    * direction: outbound (38543 - 127.0.0.1:33160) [72]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /ndt_matching
+    * direction: outbound (38543 - 127.0.0.1:33170) [73]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /joint_state_publisher
+    * direction: outbound (38543 - 127.0.0.1:33266) [75]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /detection/lidar_detector/cluster_detect_visualization_01
+    * direction: outbound (38543 - 127.0.0.1:33610) [83]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /points2image
+    * direction: outbound (38543 - 127.0.0.1:33612) [76]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /calibration_publisher
+    * direction: outbound (38543 - 127.0.0.1:33614) [80]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (38543 - 127.0.0.1:33620) [85]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /can_status_translator
+    * direction: outbound (38543 - 127.0.0.1:34308) [92]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /pose_relay
+    * direction: outbound (38543 - 127.0.0.1:34338) [79]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /vel_relay
+    * direction: outbound (38543 - 127.0.0.1:34340) [81]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /waypoint_loader
+    * direction: outbound (38543 - 127.0.0.1:34342) [82]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /waypoint_replanner
+    * direction: outbound (38543 - 127.0.0.1:34348) [86]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /waypoint_marker_publisher
+    * direction: outbound (38543 - 127.0.0.1:34364) [87]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /lane_rule
+    * direction: outbound (38543 - 127.0.0.1:34368) [88]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /lane_stop
+    * direction: outbound (38543 - 127.0.0.1:34556) [91]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /lane_select
+    * direction: outbound (38543 - 127.0.0.1:34554) [89]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /vehicle_receiver
+    * direction: outbound (38543 - 127.0.0.1:35104) [99]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /astar_avoid
+    * direction: outbound (38543 - 127.0.0.1:35288) [90]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /velocity_set
+    * direction: outbound (38543 - 127.0.0.1:35294) [95]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /pure_pursuit
+    * direction: outbound (38543 - 127.0.0.1:35292) [96]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /twist_gate
+    * direction: outbound (38543 - 127.0.0.1:35304) [98]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /twist_filter
+    * direction: outbound (38543 - 127.0.0.1:35314) [94]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /vehicle_sender
+    * direction: outbound (38543 - 127.0.0.1:35328) [97]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /points_map_loader
+    * direction: outbound (38543 - 127.0.0.1:36238) [93]
+    * transport: TCPROS
+ * topic: /nmea_sentence
+    * to: /nmea2tfpose
+    * direction: outbound (38543 - 127.0.0.1:33156) [78]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /rviz_1626322140673293607
+    * direction: outbound (38543 - 127.0.0.1:60008) [63]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /voxel_grid_filter
+    * direction: outbound (38543 - 127.0.0.1:33166) [74]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /points2image
+    * direction: outbound (38543 - 127.0.0.1:33618) [84]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (38543 - 127.0.0.1:35976) [100]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+
+--------------------------------------------------------------------------------
+Node [/points2image]
+Publications: 
+ * /points_image [autoware_msgs/PointsImage]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /camera_info [sensor_msgs/CameraInfo]
+ * /clock [rosgraph_msgs/Clock]
+ * /points_raw [sensor_msgs/PointCloud2]
+ * /projection_matrix [autoware_msgs/ProjectionMatrix]
+
+Services: 
+ * /points2image/get_loggers
+ * /points2image/set_logger_level
+
+
+contacting node http://srp:36821/ ...
+Pid: 12271
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (34249 - 127.0.0.1:52070) [19]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33612 - srp:38543) [16]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33618 - srp:38543) [17]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound (60472 - srp:57869) [18]
+    * transport: TCPROS
+ * topic: /projection_matrix
+    * to: /calibration_publisher (http://srp:37071/)
+    * direction: inbound (51260 - srp:55573) [20]
+    * transport: TCPROS
+ * topic: /camera_info
+    * to: /calibration_publisher (http://srp:37071/)
+    * direction: inbound (51266 - srp:55573) [21]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/points_map_loader]
+Publications: 
+ * /pmap_stat [std_msgs/Bool]
+ * /points_map [sensor_msgs/PointCloud2]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /points_map_loader/get_loggers
+ * /points_map_loader/set_logger_level
+
+
+contacting node http://srp:34067/ ...
+Pid: 13732
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (58473 - 127.0.0.1:37614) [15]
+    * transport: TCPROS
+ * topic: /points_map
+    * to: /rviz_1626322140673293607
+    * direction: outbound (58473 - 127.0.0.1:37618) [11]
+    * transport: TCPROS
+ * topic: /points_map
+    * to: /ndt_matching
+    * direction: outbound (58473 - 127.0.0.1:37620) [12]
+    * transport: TCPROS
+ * topic: /pmap_stat
+    * to: /runime_manager_1866_1626318804810
+    * direction: outbound (58473 - 127.0.0.1:37612) [14]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (36238 - srp:38543) [10]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/pose_relay]
+Publications: 
+ * /current_pose [geometry_msgs/PoseStamped]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /ndt_pose [geometry_msgs/PoseStamped]
+
+Services: 
+ * /pose_relay/get_loggers
+ * /pose_relay/set_logger_level
+
+
+contacting node http://srp:41033/ ...
+Pid: 12460
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (56179 - 127.0.0.1:42146) [13]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /lane_select
+    * direction: outbound (56179 - 127.0.0.1:44382) [17]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /velocity_set
+    * direction: outbound (56179 - 127.0.0.1:44386) [10]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /pure_pursuit
+    * direction: outbound (56179 - 127.0.0.1:44388) [12]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /astar_avoid
+    * direction: outbound (56179 - 127.0.0.1:44394) [15]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34338 - srp:38543) [11]
+    * transport: TCPROS
+ * topic: /ndt_pose
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (48148 - srp:56831) [14]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/pure_pursuit]
+Publications: 
+ * /angular_gravity [std_msgs/Float32]
+ * /ctrl_raw [autoware_msgs/ControlCommandStamped]
+ * /deviation_of_current_position [std_msgs/Float32]
+ * /expanded_waypoints_mark [visualization_msgs/Marker]
+ * /line_point_mark [visualization_msgs/Marker]
+ * /next_target_mark [visualization_msgs/Marker]
+ * /next_waypoint_mark [visualization_msgs/Marker]
+ * /node_status [autoware_system_msgs/NodeStatus]
+ * /rosout [rosgraph_msgs/Log]
+ * /search_circle_mark [visualization_msgs/Marker]
+ * /trajectory_circle_mark [visualization_msgs/Marker]
+ * /twist_raw [geometry_msgs/TwistStamped]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/waypoint_follower [autoware_config_msgs/ConfigWaypointFollower]
+ * /current_pose [geometry_msgs/PoseStamped]
+ * /current_velocity [geometry_msgs/TwistStamped]
+ * /final_waypoints [autoware_msgs/Lane]
+
+Services: 
+ * /pure_pursuit/get_loggers
+ * /pure_pursuit/set_logger_level
+
+
+contacting node http://srp:35765/ ...
+Pid: 13008
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (43687 - 127.0.0.1:55434) [12]
+    * transport: TCPROS
+ * topic: /twist_raw
+    * to: /twist_filter
+    * direction: outbound (43687 - 127.0.0.1:56006) [18]
+    * transport: TCPROS
+ * topic: /ctrl_raw
+    * to: /twist_filter
+    * direction: outbound (43687 - 127.0.0.1:56012) [20]
+    * transport: TCPROS
+ * topic: /next_target_mark
+    * to: /rviz_1626322140673293607
+    * direction: outbound (43687 - 127.0.0.1:56004) [17]
+    * transport: TCPROS
+ * topic: /trajectory_circle_mark
+    * to: /rviz_1626322140673293607
+    * direction: outbound (43687 - 127.0.0.1:56008) [19]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35292 - srp:38543) [10]
+    * transport: TCPROS
+ * topic: /final_waypoints
+    * to: /velocity_set (http://srp:44387/)
+    * direction: inbound (50170 - srp:49353) [21]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /pose_relay (http://srp:41033/)
+    * direction: inbound (44388 - srp:56179) [24]
+    * transport: TCPROS
+ * topic: /config/waypoint_follower
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54532 - srp:41241) [16]
+    * transport: TCPROS
+ * topic: /config/waypoint_follower
+    * to: /config_waypoint_follower_rostopic (http://srp:35817/)
+    * direction: inbound (38134 - srp:38187) [13]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /vel_relay (http://srp:39033/)
+    * direction: inbound (33482 - srp:45923) [23]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/robot_state_publisher]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /joint_states [sensor_msgs/JointState]
+
+Services: 
+ * /robot_state_publisher/get_loggers
+ * /robot_state_publisher/set_logger_level
+
+
+contacting node http://srp:32807/ ...
+Pid: 11980
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (40007 - 127.0.0.1:44630) [11]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /rviz_1626322140673293607
+    * direction: outbound (40007 - 127.0.0.1:44656) [15]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (40007 - 127.0.0.1:45122) [18]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /astar_avoid
+    * direction: outbound (40007 - 127.0.0.1:46788) [20]
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /rviz_1626322140673293607
+    * direction: outbound (40007 - 127.0.0.1:44654) [10]
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (40007 - 127.0.0.1:45126) [19]
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /astar_avoid
+    * direction: outbound (40007 - 127.0.0.1:46794) [21]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33144 - srp:38543) [14]
+    * transport: TCPROS
+ * topic: /joint_states
+    * to: /joint_state_publisher (http://srp:35159/)
+    * direction: inbound (37938 - srp:33777) [16]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/rosout]
+Publications: 
+ * /rosout_agg [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /rosout [rosgraph_msgs/Log]
+
+Services: 
+ * /rosout/get_loggers
+ * /rosout/set_logger_level
+
+
+contacting node http://srp:42771/ ...
+Pid: 1821
+Connections:
+ * topic: /rosout
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (48462 - srp:41241) [13]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (59120 - srp:38543) [15]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /rviz_1626322140673293607 (http://srp:45799/)
+    * direction: inbound (54160 - srp:49635) [17]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /world_to_map (http://srp:37421/)
+    * direction: inbound (35664 - srp:42131) [21]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /map_to_mobility (http://srp:39299/)
+    * direction: inbound (39566 - srp:59671) [22]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (46738 - srp:45705) [23]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /velodyne_nodelet_manager_driver (http://srp:42453/)
+    * direction: inbound (36444 - srp:47129) [20]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /velodyne_nodelet (http://srp:33557/)
+    * direction: inbound (33578 - srp:53335) [16]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound (59538 - srp:57869) [25]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /base_link_to_localizer (http://srp:38229/)
+    * direction: inbound (37170 - srp:37245) [29]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /robot_state_publisher (http://srp:32807/)
+    * direction: inbound (44630 - srp:40007) [30]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /nmea2tfpose (http://srp:40373/)
+    * direction: inbound (55012 - srp:37671) [31]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /voxel_grid_filter (http://srp:36803/)
+    * direction: inbound (55596 - srp:33089) [18]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (46968 - srp:56831) [19]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /joint_state_publisher (http://srp:35159/)
+    * direction: inbound (37772 - srp:33777) [27]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /calibration_publisher (http://srp:37071/)
+    * direction: inbound (51248 - srp:55573) [34]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /points2image (http://srp:36821/)
+    * direction: inbound (52070 - srp:34249) [35]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /detection/lidar_detector/cluster_detect_visualization_01 (http://srp:46261/)
+    * direction: inbound (37346 - srp:50989) [36]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /lidar_euclidean_cluster_detect (http://srp:41139/)
+    * direction: inbound (59914 - srp:36011) [37]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /can_status_translator (http://srp:36873/)
+    * direction: inbound (43182 - srp:44549) [43]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /pose_relay (http://srp:41033/)
+    * direction: inbound (42146 - srp:56179) [44]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /vel_relay (http://srp:39033/)
+    * direction: inbound (59478 - srp:45923) [45]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /waypoint_loader (http://srp:36021/)
+    * direction: inbound (41830 - srp:36805) [46]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /lane_select (http://srp:46375/)
+    * direction: inbound (33684 - srp:41917) [26]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /waypoint_replanner (http://srp:42345/)
+    * direction: inbound (51220 - srp:60447) [28]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /waypoint_marker_publisher (http://srp:33237/)
+    * direction: inbound (48344 - srp:37443) [32]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /lane_rule (http://srp:42055/)
+    * direction: inbound (35222 - srp:57645) [33]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /lane_stop (http://srp:46465/)
+    * direction: inbound (52908 - srp:59371) [47]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /vehicle_receiver (http://srp:39915/)
+    * direction: inbound (44526 - srp:41105) [50]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /twist_filter (http://srp:43197/)
+    * direction: inbound (33470 - srp:45937) [51]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /vehicle_sender (http://srp:40993/)
+    * direction: inbound (43584 - srp:45727) [52]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /astar_avoid (http://srp:38053/)
+    * direction: inbound (40950 - srp:41867) [53]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /velocity_set (http://srp:44387/)
+    * direction: inbound (49430 - srp:49353) [54]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /pure_pursuit (http://srp:35765/)
+    * direction: inbound (55434 - srp:43687) [55]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /twist_gate (http://srp:41513/)
+    * direction: inbound (48556 - srp:55701) [38]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /points_map_loader (http://srp:34067/)
+    * direction: inbound (37614 - srp:58473) [39]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/runime_manager_1866_1626318804810]
+Publications: 
+ * /accel_cmd [autoware_msgs/AccelCmd]
+ * /brake_cmd [autoware_msgs/BrakeCmd]
+ * /config/adjust_xy [autoware_msgs/AdjustXY]
+ * /config/approximate_ndt_mapping [autoware_config_msgs/ConfigApproximateNDTMapping]
+ * /config/car_dpm [autoware_config_msgs/ConfigCarDPM]
+ * /config/car_fusion [autoware_config_msgs/ConfigCarFusion]
+ * /config/car_kf [autoware_config_msgs/ConfigCarKF]
+ * /config/compare_map_filter [autoware_config_msgs/ConfigCompareMapFilter]
+ * /config/decision_maker [autoware_config_msgs/ConfigDecisionMaker]
+ * /config/distance_filter [autoware_config_msgs/ConfigDistanceFilter]
+ * /config/icp [autoware_config_msgs/ConfigICP]
+ * /config/lane_rule [autoware_config_msgs/ConfigLaneRule]
+ * /config/lane_select [autoware_config_msgs/ConfigLaneSelect]
+ * /config/lattice_velocity_set [autoware_config_msgs/ConfigLatticeVelocitySet]
+ * /config/ndt [autoware_config_msgs/ConfigNDT]
+ * /config/ndt_mapping [autoware_config_msgs/ConfigNDTMapping]
+ * /config/pedestrian_dpm [autoware_config_msgs/ConfigPedestrianDPM]
+ * /config/pedestrian_fusion [autoware_config_msgs/ConfigPedestrianFusion]
+ * /config/pedestrian_kf [autoware_config_msgs/ConfigPedestrianKF]
+ * /config/random_filter [autoware_config_msgs/ConfigRandomFilter]
+ * /config/ray_ground_filter [autoware_config_msgs/ConfigRayGroundFilter]
+ * /config/ring_filter [autoware_config_msgs/ConfigRingFilter]
+ * /config/ring_ground_filter [autoware_config_msgs/ConfigRingGroundFilter]
+ * /config/ssd [autoware_config_msgs/ConfigSSD]
+ * /config/superimpose [std_msgs/Bool]
+ * /config/twist_filter [autoware_config_msgs/ConfigTwistFilter]
+ * /config/velocity_set [autoware_config_msgs/ConfigVelocitySet]
+ * /config/voxel_grid_filter [autoware_config_msgs/ConfigVoxelGridFilter]
+ * /config/waypoint_follower [autoware_config_msgs/ConfigWaypointFollower]
+ * /config/waypoint_replanner [autoware_config_msgs/ConfigWaypointReplanner]
+ * /from_rtmgr [std_msgs/String]
+ * /light_color_managed [autoware_msgs/TrafficLight]
+ * /rosout [rosgraph_msgs/Log]
+ * /steer_cmd [autoware_msgs/SteerCmd]
+ * /twist_cmd [geometry_msgs/TwistStamped]
+
+Subscriptions: 
+ * /gnss_stat [unknown type]
+ * /lf_stat [unknown type]
+ * /ndt_stat [autoware_msgs/NDTStat]
+ * /pmap_stat [std_msgs/Bool]
+ * /route_cmd [unknown type]
+ * /to_rtmgr [unknown type]
+ * /topic1 [unknown type]
+ * /topic2 [unknown type]
+ * /vmap_stat [std_msgs/Bool]
+
+Services: 
+ * /runime_manager_1866_1626318804810/get_loggers
+ * /runime_manager_1866_1626318804810/set_logger_level
+
+
+contacting node http://srp:36169/ ...
+Pid: 1866
+Connections:
+ * topic: /config/voxel_grid_filter
+    * to: /voxel_grid_filter
+    * direction: outbound (41241 - 127.0.0.1:52012) [20]
+    * transport: TCPROS
+ * topic: /config/waypoint_follower
+    * to: /pure_pursuit
+    * direction: outbound (41241 - 127.0.0.1:54532) [97]
+    * transport: TCPROS
+ * topic: /config/lane_select
+    * to: /lane_select
+    * direction: outbound (41241 - 127.0.0.1:53454) [91]
+    * transport: TCPROS
+ * topic: /light_color_managed
+    * to: /waypoint_marker_publisher
+    * direction: outbound (41241 - 127.0.0.1:53220) [87]
+    * transport: TCPROS
+ * topic: /light_color_managed
+    * to: /lane_stop
+    * direction: outbound (41241 - 127.0.0.1:53466) [84]
+    * transport: TCPROS
+ * topic: /config/twist_filter
+    * to: /twist_gate
+    * direction: outbound (41241 - 127.0.0.1:54344) [95]
+    * transport: TCPROS
+ * topic: /config/twist_filter
+    * to: /twist_filter
+    * direction: outbound (41241 - 127.0.0.1:54356) [96]
+    * transport: TCPROS
+ * topic: /brake_cmd
+    * to: /twist_gate
+    * direction: outbound (41241 - 127.0.0.1:54670) [102]
+    * transport: TCPROS
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (41241 - 127.0.0.1:48462) [17]
+    * transport: TCPROS
+ * topic: /config/velocity_set
+    * to: /velocity_set
+    * direction: outbound (41241 - 127.0.0.1:54558) [99]
+    * transport: TCPROS
+ * topic: /config/lane_rule
+    * to: /lane_rule
+    * direction: outbound (41241 - 127.0.0.1:53716) [94]
+    * transport: TCPROS
+ * topic: /twist_cmd
+    * to: /twist_gate
+    * direction: outbound (41241 - 127.0.0.1:54346) [98]
+    * transport: TCPROS
+ * topic: /config/ndt
+    * to: /ndt_matching
+    * direction: outbound (41241 - 127.0.0.1:52026) [82]
+    * transport: TCPROS
+ * topic: /config/waypoint_replanner
+    * to: /waypoint_replanner
+    * direction: outbound (41241 - 127.0.0.1:53470) [93]
+    * transport: TCPROS
+ * topic: /steer_cmd
+    * to: /twist_gate
+    * direction: outbound (41241 - 127.0.0.1:54668) [100]
+    * transport: TCPROS
+ * topic: /accel_cmd
+    * to: /twist_gate
+    * direction: outbound (41241 - 127.0.0.1:54536) [101]
+    * transport: TCPROS
+ * topic: /pmap_stat
+    * to: /points_map_loader (http://srp:34067/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /vmap_stat
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /ndt_stat
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/rviz_1626322140673293607]
+Publications: 
+ * /clicked_point [geometry_msgs/PointStamped]
+ * /initialpose [geometry_msgs/PoseWithCovarianceStamped]
+ * /move_base_simple/goal [geometry_msgs/PoseStamped]
+ * /remote_cmd [autoware_msgs/RemoteCmd]
+ * /rosout [rosgraph_msgs/Log]
+ * /state_cmd [std_msgs/String]
+
+Subscriptions: 
+ * /AnimateGlobalPlan [unknown type]
+ * /behavior_state [unknown type]
+ * /behavior_state_array [unknown type]
+ * /clock [rosgraph_msgs/Clock]
+ * /decision_maker/state_overlay [unknown type]
+ * /detected_polygons [unknown type]
+ * /detection/object_tracker/objects_markers [unknown type]
+ * /detection_range [visualization_msgs/MarkerArray]
+ * /dp_planner_tracked_boxes [unknown type]
+ * /global_waypoints_mark [visualization_msgs/MarkerArray]
+ * /global_waypoints_rviz [unknown type]
+ * /health_aggregator/error_text [unknown type]
+ * /health_aggregator/fatal_text [unknown type]
+ * /health_aggregator/ok_text [unknown type]
+ * /health_aggregator/warn_text [unknown type]
+ * /lanelet2_map_viz [unknown type]
+ * /linear_velocity_viz [std_msgs/Float32]
+ * /local_trajectories [unknown type]
+ * /local_waypoints_mark [visualization_msgs/MarkerArray]
+ * /mpc_follower/debug/filtered_traj [unknown type]
+ * /mpc_follower/debug/filtered_traj_array [unknown type]
+ * /mpc_follower/debug/predicted_traj [unknown type]
+ * /mpc_follower/debug/predicted_traj_array [unknown type]
+ * /ndt_monitor/ndt_info_text [unknown type]
+ * /next_target_mark [visualization_msgs/Marker]
+ * /next_target_mark_array [unknown type]
+ * /points_cluster [sensor_msgs/PointCloud2]
+ * /points_map [sensor_msgs/PointCloud2]
+ * /points_no_ground [unknown type]
+ * /points_raw [sensor_msgs/PointCloud2]
+ * /prediction/motion_predictor/path_markers [unknown type]
+ * /safety_border [unknown type]
+ * /safety_border_array [unknown type]
+ * /semantics/costmap_generator/occupancy_grid [unknown type]
+ * /semantics/costmap_generator/occupancy_grid_updates [unknown type]
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+ * /time_ndt_matching [std_msgs/Float32]
+ * /trajectory_circle_mark [visualization_msgs/Marker]
+ * /trajectory_circle_mark_array [unknown type]
+ * /vector_map [visualization_msgs/MarkerArray]
+ * /waypoint_saver_marker [unknown type]
+
+Services: 
+ * /rviz_1626322140673293607/get_loggers
+ * /rviz_1626322140673293607/load_config
+ * /rviz_1626322140673293607/reload_shaders
+ * /rviz_1626322140673293607/save_config
+ * /rviz_1626322140673293607/set_logger_level
+
+
+contacting node http://srp:45799/ ...
+Pid: 10960
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (49635 - 127.0.0.1:54160) [90]
+    * transport: TCPROS
+ * topic: /initialpose
+    * to: /ndt_matching
+    * direction: outbound (49635 - 127.0.0.1:56414) [118]
+    * transport: TCPROS
+ * topic: /remote_cmd
+    * to: /twist_gate
+    * direction: outbound (49635 - 127.0.0.1:58720) [121]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (59164 - srp:38543) [91]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /map_to_mobility (http://srp:39299/)
+    * direction: inbound (39396 - srp:59671) [106]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /world_to_map (http://srp:37421/)
+    * direction: inbound (35500 - srp:42131) [107]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /base_link_to_localizer (http://srp:38229/)
+    * direction: inbound (37178 - srp:37245) [114]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /robot_state_publisher (http://srp:32807/)
+    * direction: inbound (44656 - srp:40007) [115]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /nmea2tfpose (http://srp:40373/)
+    * direction: inbound (55040 - srp:37671) [116]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (50142 - srp:56831) [124]
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /robot_state_publisher (http://srp:32807/)
+    * direction: inbound (44654 - srp:40007) [103]
+    * transport: TCPROS
+ * topic: /time_ndt_matching
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (46986 - srp:56831) [117]
+    * transport: TCPROS
+ * topic: /linear_velocity_viz
+    * to: /can_status_translator (http://srp:36873/)
+    * direction: inbound (43380 - srp:44549) [111]
+    * transport: TCPROS
+ * topic: /points_cluster
+    * to: /lidar_euclidean_cluster_detect (http://srp:41139/)
+    * direction: inbound (34018 - srp:36011) [123]
+    * transport: TCPROS
+ * topic: /points_map
+    * to: /points_map_loader (http://srp:34067/)
+    * direction: inbound (37618 - srp:58473) [112]
+    * transport: TCPROS
+ * topic: /vector_map
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (46740 - srp:45705) [104]
+    * transport: TCPROS
+ * topic: /trajectory_circle_mark
+    * to: /pure_pursuit (http://srp:35765/)
+    * direction: inbound (56008 - srp:43687) [122]
+    * transport: TCPROS
+ * topic: /next_target_mark
+    * to: /pure_pursuit (http://srp:35765/)
+    * direction: inbound (56004 - srp:43687) [110]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (60008 - srp:38543) [97]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound (59532 - srp:57869) [108]
+    * transport: TCPROS
+ * topic: /local_waypoints_mark
+    * to: /waypoint_marker_publisher (http://srp:33237/)
+    * direction: inbound (48794 - srp:37443) [113]
+    * transport: TCPROS
+ * topic: /detection_range
+    * to: /velocity_set (http://srp:44387/)
+    * direction: inbound (50180 - srp:49353) [120]
+    * transport: TCPROS
+ * topic: /global_waypoints_mark
+    * to: /waypoint_marker_publisher (http://srp:33237/)
+    * direction: inbound (48798 - srp:37443) [119]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/twist_filter]
+Publications: 
+ * /ctrl_cmd [autoware_msgs/ControlCommandStamped]
+ * /node_status [autoware_system_msgs/NodeStatus]
+ * /rosout [rosgraph_msgs/Log]
+ * /twist_cmd [geometry_msgs/TwistStamped]
+ * /twist_filter/limitation_debug/ctrl/lateral_accel [std_msgs/Float32]
+ * /twist_filter/limitation_debug/ctrl/lateral_jerk [std_msgs/Float32]
+ * /twist_filter/limitation_debug/twist/lateral_accel [std_msgs/Float32]
+ * /twist_filter/limitation_debug/twist/lateral_jerk [std_msgs/Float32]
+ * /twist_filter/result/ctrl/lateral_accel [std_msgs/Float32]
+ * /twist_filter/result/ctrl/lateral_jerk [std_msgs/Float32]
+ * /twist_filter/result/twist/lateral_accel [std_msgs/Float32]
+ * /twist_filter/result/twist/lateral_jerk [std_msgs/Float32]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/twist_filter [autoware_config_msgs/ConfigTwistFilter]
+ * /ctrl_raw [autoware_msgs/ControlCommandStamped]
+ * /twist_raw [geometry_msgs/TwistStamped]
+
+Services: 
+ * /twist_filter/get_loggers
+ * /twist_filter/set_logger_level
+
+
+contacting node http://srp:43197/ ...
+Pid: 13021
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (45937 - 127.0.0.1:33470) [12]
+    * transport: TCPROS
+ * topic: /twist_cmd
+    * to: /twist_gate
+    * direction: outbound (45937 - 127.0.0.1:33882) [17]
+    * transport: TCPROS
+ * topic: /ctrl_cmd
+    * to: /twist_gate
+    * direction: outbound (45937 - 127.0.0.1:34216) [16]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35314 - srp:38543) [14]
+    * transport: TCPROS
+ * topic: /twist_raw
+    * to: /pure_pursuit (http://srp:35765/)
+    * direction: inbound (56006 - srp:43687) [10]
+    * transport: TCPROS
+ * topic: /ctrl_raw
+    * to: /pure_pursuit (http://srp:35765/)
+    * direction: inbound (56012 - srp:43687) [18]
+    * transport: TCPROS
+ * topic: /config/twist_filter
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54356 - srp:41241) [13]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/twist_gate]
+Publications: 
+ * /ctrl_mode [std_msgs/String]
+ * /node_status [autoware_system_msgs/NodeStatus]
+ * /rosout [rosgraph_msgs/Log]
+ * /vehicle_cmd [autoware_msgs/VehicleCmd]
+
+Subscriptions: 
+ * /accel_cmd [autoware_msgs/AccelCmd]
+ * /brake_cmd [autoware_msgs/BrakeCmd]
+ * /clock [rosgraph_msgs/Clock]
+ * /config/twist_filter [autoware_config_msgs/ConfigTwistFilter]
+ * /ctrl_cmd [autoware_msgs/ControlCommandStamped]
+ * /decision_maker/state [unknown type]
+ * /emergency_velocity [unknown type]
+ * /gear_cmd [unknown type]
+ * /lamp_cmd [unknown type]
+ * /mode_cmd [unknown type]
+ * /remote_cmd [autoware_msgs/RemoteCmd]
+ * /steer_cmd [autoware_msgs/SteerCmd]
+ * /twist_cmd [geometry_msgs/TwistStamped]
+
+Services: 
+ * /twist_gate/get_loggers
+ * /twist_gate/set_logger_level
+
+
+contacting node http://srp:41513/ ...
+Pid: 13041
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (55701 - 127.0.0.1:48556) [17]
+    * transport: TCPROS
+ * topic: /vehicle_cmd
+    * to: /vehicle_sender
+    * direction: outbound (55701 - 127.0.0.1:48758) [18]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35304 - srp:38543) [10]
+    * transport: TCPROS
+ * topic: /remote_cmd
+    * to: /rviz_1626322140673293607 (http://srp:45799/)
+    * direction: inbound (58720 - srp:49635) [11]
+    * transport: TCPROS
+ * topic: /config/twist_filter
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54344 - srp:41241) [19]
+    * transport: TCPROS
+ * topic: /twist_cmd
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54346 - srp:41241) [20]
+    * transport: TCPROS
+ * topic: /twist_cmd
+    * to: /twist_filter (http://srp:43197/)
+    * direction: inbound (33882 - srp:45937) [23]
+    * transport: TCPROS
+ * topic: /accel_cmd
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54536 - srp:41241) [14]
+    * transport: TCPROS
+ * topic: /steer_cmd
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54668 - srp:41241) [16]
+    * transport: TCPROS
+ * topic: /brake_cmd
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54670 - srp:41241) [21]
+    * transport: TCPROS
+ * topic: /ctrl_cmd
+    * to: /twist_filter (http://srp:43197/)
+    * direction: inbound (34216 - srp:45937) [12]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/vector_map_loader]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /vector_map [visualization_msgs/MarkerArray]
+ * /vector_map_info/area [vector_map_msgs/AreaArray]
+ * /vector_map_info/cross_walk [vector_map_msgs/CrossWalkArray]
+ * /vector_map_info/curb [vector_map_msgs/CurbArray]
+ * /vector_map_info/dtlane [vector_map_msgs/DTLaneArray]
+ * /vector_map_info/gutter [vector_map_msgs/GutterArray]
+ * /vector_map_info/lane [vector_map_msgs/LaneArray]
+ * /vector_map_info/line [vector_map_msgs/LineArray]
+ * /vector_map_info/node [vector_map_msgs/NodeArray]
+ * /vector_map_info/point [vector_map_msgs/PointArray]
+ * /vector_map_info/pole [vector_map_msgs/PoleArray]
+ * /vector_map_info/road_edge [vector_map_msgs/RoadEdgeArray]
+ * /vector_map_info/road_mark [vector_map_msgs/RoadMarkArray]
+ * /vector_map_info/road_pole [vector_map_msgs/RoadPoleArray]
+ * /vector_map_info/road_sign [vector_map_msgs/RoadSignArray]
+ * /vector_map_info/signal [vector_map_msgs/SignalArray]
+ * /vector_map_info/stop_line [vector_map_msgs/StopLineArray]
+ * /vector_map_info/street_light [vector_map_msgs/StreetLightArray]
+ * /vector_map_info/utility_pole [vector_map_msgs/UtilityPoleArray]
+ * /vector_map_info/vector [vector_map_msgs/VectorArray]
+ * /vector_map_info/white_line [vector_map_msgs/WhiteLineArray]
+ * /vector_map_info/zebra_zone [vector_map_msgs/ZebraZoneArray]
+ * /vmap_stat [std_msgs/Bool]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /vector_map_info/area [vector_map_msgs/AreaArray]
+ * /vector_map_info/cross_walk [vector_map_msgs/CrossWalkArray]
+ * /vector_map_info/curb [vector_map_msgs/CurbArray]
+ * /vector_map_info/dtlane [vector_map_msgs/DTLaneArray]
+ * /vector_map_info/gutter [vector_map_msgs/GutterArray]
+ * /vector_map_info/lane [vector_map_msgs/LaneArray]
+ * /vector_map_info/line [vector_map_msgs/LineArray]
+ * /vector_map_info/node [vector_map_msgs/NodeArray]
+ * /vector_map_info/point [vector_map_msgs/PointArray]
+ * /vector_map_info/pole [vector_map_msgs/PoleArray]
+ * /vector_map_info/road_edge [vector_map_msgs/RoadEdgeArray]
+ * /vector_map_info/road_mark [vector_map_msgs/RoadMarkArray]
+ * /vector_map_info/road_pole [vector_map_msgs/RoadPoleArray]
+ * /vector_map_info/road_sign [vector_map_msgs/RoadSignArray]
+ * /vector_map_info/signal [vector_map_msgs/SignalArray]
+ * /vector_map_info/stop_line [vector_map_msgs/StopLineArray]
+ * /vector_map_info/street_light [vector_map_msgs/StreetLightArray]
+ * /vector_map_info/utility_pole [vector_map_msgs/UtilityPoleArray]
+ * /vector_map_info/vector [vector_map_msgs/VectorArray]
+ * /vector_map_info/white_line [vector_map_msgs/WhiteLineArray]
+ * /vector_map_info/zebra_zone [vector_map_msgs/ZebraZoneArray]
+
+Services: 
+ * /vector_map_loader/get_loggers
+ * /vector_map_loader/set_logger_level
+
+
+contacting node http://srp:39485/ ...
+Pid: 11542
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (45705 - 127.0.0.1:46738) [10]
+    * transport: TCPROS
+ * topic: /vector_map
+    * to: /rviz_1626322140673293607
+    * direction: outbound (45705 - 127.0.0.1:46740) [13]
+    * transport: TCPROS
+ * topic: /vmap_stat
+    * to: /runime_manager_1866_1626318804810
+    * direction: outbound (45705 - 127.0.0.1:46552) [14]
+    * transport: TCPROS
+ * topic: /vector_map_info/lane
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/lane
+    * to: /lane_rule
+    * direction: outbound (45705 - 127.0.0.1:49132) [20]
+    * transport: TCPROS
+ * topic: /vector_map_info/line
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/line
+    * to: /velocity_set
+    * direction: outbound (45705 - 127.0.0.1:50374) [15]
+    * transport: TCPROS
+ * topic: /vector_map_info/utility_pole
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/curb
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/node
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/node
+    * to: /lane_rule
+    * direction: outbound (45705 - 127.0.0.1:49136) [21]
+    * transport: TCPROS
+ * topic: /vector_map_info/gutter
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/point
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/point
+    * to: /lane_rule
+    * direction: outbound (45705 - 127.0.0.1:49130) [19]
+    * transport: TCPROS
+ * topic: /vector_map_info/point
+    * to: /velocity_set
+    * direction: outbound (45705 - 127.0.0.1:50376) [16]
+    * transport: TCPROS
+ * topic: /vector_map_info/pole
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/vector
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/zebra_zone
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/street_light
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/white_line
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_mark
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/area
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/area
+    * to: /velocity_set
+    * direction: outbound (45705 - 127.0.0.1:50362) [24]
+    * transport: TCPROS
+ * topic: /vector_map_info/dtlane
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/dtlane
+    * to: /lane_rule
+    * direction: outbound (45705 - 127.0.0.1:49394) [12]
+    * transport: TCPROS
+ * topic: /vector_map_info/signal
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_pole
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_sign
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_edge
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/cross_walk
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/cross_walk
+    * to: /velocity_set
+    * direction: outbound (45705 - 127.0.0.1:50360) [23]
+    * transport: TCPROS
+ * topic: /vector_map_info/stop_line
+    * to: /vector_map_loader
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/stop_line
+    * to: /lane_rule
+    * direction: outbound (45705 - 127.0.0.1:49140) [22]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (60436 - srp:38543) [3]
+    * transport: TCPROS
+ * topic: /vector_map_info/point
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/vector
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/line
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/area
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/pole
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/dtlane
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/node
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/lane
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_edge
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/gutter
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/curb
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/white_line
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/stop_line
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/zebra_zone
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/cross_walk
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_mark
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_pole
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/road_sign
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/signal
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/street_light
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /vector_map_info/utility_pole
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+
+--------------------------------------------------------------------------------
+Node [/vehicle_receiver]
+Publications: 
+ * /can_info [autoware_can_msgs/CANInfo]
+ * /mode_info [tablet_socket_msgs/mode_info]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /vehicle_receiver/get_loggers
+ * /vehicle_receiver/set_logger_level
+
+
+contacting node http://srp:39915/ ...
+Pid: 12944
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (41105 - 127.0.0.1:44526) [15]
+    * transport: TCPROS
+ * topic: /can_info
+    * to: /can_status_translator
+    * direction: outbound (41105 - 127.0.0.1:44594) [10]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35104 - srp:38543) [13]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/vehicle_sender]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /vehicle_cmd [autoware_msgs/VehicleCmd]
+
+Services: 
+ * /vehicle_sender/get_loggers
+ * /vehicle_sender/set_logger_level
+
+
+contacting node http://srp:40993/ ...
+Pid: 12945
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (45727 - 127.0.0.1:43584) [14]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35328 - srp:38543) [16]
+    * transport: TCPROS
+ * topic: /vehicle_cmd
+    * to: /twist_gate (http://srp:41513/)
+    * direction: inbound (48758 - srp:55701) [10]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/vel_relay]
+Publications: 
+ * /current_velocity [geometry_msgs/TwistStamped]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /estimate_twist [geometry_msgs/TwistStamped]
+
+Services: 
+ * /vel_relay/get_loggers
+ * /vel_relay/set_logger_level
+
+
+contacting node http://srp:39033/ ...
+Pid: 12467
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (45923 - 127.0.0.1:59478) [13]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /lane_select
+    * direction: outbound (45923 - 127.0.0.1:33478) [17]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /pure_pursuit
+    * direction: outbound (45923 - 127.0.0.1:33482) [12]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /velocity_set
+    * direction: outbound (45923 - 127.0.0.1:33488) [15]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /astar_avoid
+    * direction: outbound (45923 - 127.0.0.1:33490) [10]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34340 - srp:38543) [11]
+    * transport: TCPROS
+ * topic: /estimate_twist
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (48154 - srp:56831) [14]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/velocity_set]
+Publications: 
+ * /detection_range [visualization_msgs/MarkerArray]
+ * /final_waypoints [autoware_msgs/Lane]
+ * /node_status [autoware_system_msgs/NodeStatus]
+ * /obstacle [visualization_msgs/Marker]
+ * /obstacle_waypoint [std_msgs/Int32]
+ * /rosout [rosgraph_msgs/Log]
+ * /stopline_waypoint [std_msgs/Int32]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/velocity_set [autoware_config_msgs/ConfigVelocitySet]
+ * /current_pose [geometry_msgs/PoseStamped]
+ * /current_velocity [geometry_msgs/TwistStamped]
+ * /localizer_pose [geometry_msgs/PoseStamped]
+ * /points_no_ground [unknown type]
+ * /safety_waypoints [autoware_msgs/Lane]
+ * /state/stopline_wpidx [unknown type]
+ * /vector_map_info/area [vector_map_msgs/AreaArray]
+ * /vector_map_info/cross_walk [vector_map_msgs/CrossWalkArray]
+ * /vector_map_info/line [vector_map_msgs/LineArray]
+ * /vector_map_info/point [vector_map_msgs/PointArray]
+
+Services: 
+ * /velocity_set/get_loggers
+ * /velocity_set/set_logger_level
+
+
+contacting node http://srp:44387/ ...
+Pid: 12977
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (49353 - 127.0.0.1:49430) [12]
+    * transport: TCPROS
+ * topic: /detection_range
+    * to: /rviz_1626322140673293607
+    * direction: outbound (49353 - 127.0.0.1:50180) [10]
+    * transport: TCPROS
+ * topic: /obstacle_waypoint
+    * to: /astar_avoid
+    * direction: outbound (49353 - 127.0.0.1:50172) [15]
+    * transport: TCPROS
+ * topic: /final_waypoints
+    * to: /pure_pursuit
+    * direction: outbound (49353 - 127.0.0.1:50170) [14]
+    * transport: TCPROS
+ * topic: /final_waypoints
+    * to: /waypoint_marker_publisher
+    * direction: outbound (49353 - 127.0.0.1:50182) [19]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (35294 - srp:38543) [11]
+    * transport: TCPROS
+ * topic: /safety_waypoints
+    * to: /astar_avoid (http://srp:38053/)
+    * direction: inbound (41680 - srp:41867) [24]
+    * transport: TCPROS
+ * topic: /current_velocity
+    * to: /vel_relay (http://srp:39033/)
+    * direction: inbound (33488 - srp:45923) [28]
+    * transport: TCPROS
+ * topic: /config/velocity_set
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (54558 - srp:41241) [18]
+    * transport: TCPROS
+ * topic: /localizer_pose
+    * to: /ndt_matching (http://srp:42473/)
+    * direction: inbound (49632 - srp:56831) [25]
+    * transport: TCPROS
+ * topic: /current_pose
+    * to: /pose_relay (http://srp:41033/)
+    * direction: inbound (44386 - srp:56179) [23]
+    * transport: TCPROS
+ * topic: /vector_map_info/cross_walk
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (50360 - srp:45705) [26]
+    * transport: TCPROS
+ * topic: /vector_map_info/area
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (50362 - srp:45705) [27]
+    * transport: TCPROS
+ * topic: /vector_map_info/line
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (50374 - srp:45705) [16]
+    * transport: TCPROS
+ * topic: /vector_map_info/point
+    * to: /vector_map_loader (http://srp:39485/)
+    * direction: inbound (50376 - srp:45705) [17]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/velodyne_nodelet]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /velodyne_nodelet_manager/bond [bond/Status]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /velodyne_nodelet_manager/bond [bond/Status]
+
+Services: 
+ * /velodyne_nodelet/get_loggers
+ * /velodyne_nodelet/set_logger_level
+
+
+contacting node http://srp:33557/ ...
+Pid: 11789
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (53335 - 127.0.0.1:33578) [16]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager
+    * direction: outbound (53335 - 127.0.0.1:33588) [17]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager_driver
+    * direction: outbound (53335 - 127.0.0.1:33590) [19]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (60922 - srp:38543) [12]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet (http://srp:33557/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager_driver (http://srp:42453/)
+    * direction: inbound (36504 - srp:47129) [10]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound (59552 - srp:57869) [18]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/velodyne_nodelet_manager]
+Publications: 
+ * /diagnostics [diagnostic_msgs/DiagnosticArray]
+ * /points_raw [sensor_msgs/PointCloud2]
+ * /rosout [rosgraph_msgs/Log]
+ * /velodyne_nodelet/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /velodyne_nodelet/parameter_updates [dynamic_reconfigure/Config]
+ * /velodyne_nodelet_manager/bond [bond/Status]
+ * /velodyne_nodelet_manager_driver/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /velodyne_nodelet_manager_driver/parameter_updates [dynamic_reconfigure/Config]
+ * /velodyne_packets [velodyne_msgs/VelodyneScan]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /velodyne_nodelet_manager/bond [bond/Status]
+ * /velodyne_packets [velodyne_msgs/VelodyneScan]
+
+Services: 
+ * /velodyne_nodelet/set_parameters
+ * /velodyne_nodelet_manager/get_loggers
+ * /velodyne_nodelet_manager/list
+ * /velodyne_nodelet_manager/load_nodelet
+ * /velodyne_nodelet_manager/set_logger_level
+ * /velodyne_nodelet_manager/unload_nodelet
+ * /velodyne_nodelet_manager_driver/set_parameters
+
+
+contacting node http://srp:36241/ ...
+Pid: 11786
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (57869 - 127.0.0.1:59538) [10]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /rviz_1626322140673293607
+    * direction: outbound (57869 - 127.0.0.1:59532) [19]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /voxel_grid_filter
+    * direction: outbound (57869 - 127.0.0.1:60018) [17]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /points2image
+    * direction: outbound (57869 - 127.0.0.1:60472) [18]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (57869 - 127.0.0.1:34592) [22]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager_driver
+    * direction: outbound (57869 - 127.0.0.1:59544) [20]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet
+    * direction: outbound (57869 - 127.0.0.1:59552) [15]
+    * transport: TCPROS
+ * topic: /velodyne_packets
+    * to: /velodyne_nodelet_manager
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (60916 - srp:38543) [14]
+    * transport: TCPROS
+ * topic: /velodyne_packets
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager_driver (http://srp:42453/)
+    * direction: inbound (36496 - srp:47129) [13]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet (http://srp:33557/)
+    * direction: inbound (33588 - srp:53335) [21]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/velodyne_nodelet_manager_driver]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /velodyne_nodelet_manager/bond [bond/Status]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /velodyne_nodelet_manager/bond [bond/Status]
+
+Services: 
+ * /velodyne_nodelet_manager_driver/get_loggers
+ * /velodyne_nodelet_manager_driver/set_logger_level
+
+
+contacting node http://srp:42453/ ...
+Pid: 11787
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (47129 - 127.0.0.1:36444) [12]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager_driver
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager
+    * direction: outbound (47129 - 127.0.0.1:36496) [17]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet
+    * direction: outbound (47129 - 127.0.0.1:36504) [10]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (60890 - srp:38543) [13]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager_driver (http://srp:42453/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound (59544 - srp:57869) [16]
+    * transport: TCPROS
+ * topic: /velodyne_nodelet_manager/bond
+    * to: /velodyne_nodelet (http://srp:33557/)
+    * direction: inbound (33590 - srp:53335) [18]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/voxel_grid_filter]
+Publications: 
+ * /filtered_points [sensor_msgs/PointCloud2]
+ * /points_downsampler_info [points_downsampler/PointsDownsamplerInfo]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /config/voxel_grid_filter [autoware_config_msgs/ConfigVoxelGridFilter]
+ * /points_raw [sensor_msgs/PointCloud2]
+
+Services: 
+ * /voxel_grid_filter/get_loggers
+ * /voxel_grid_filter/set_logger_level
+
+
+contacting node http://srp:36803/ ...
+Pid: 11994
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (33089 - 127.0.0.1:55596) [17]
+    * transport: TCPROS
+ * topic: /filtered_points
+    * to: /ndt_matching
+    * direction: outbound (33089 - 127.0.0.1:55624) [10]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33160 - srp:38543) [16]
+    * transport: TCPROS
+ * topic: /config/voxel_grid_filter
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (52012 - srp:41241) [18]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (33166 - srp:38543) [19]
+    * transport: TCPROS
+ * topic: /points_raw
+    * to: /velodyne_nodelet_manager (http://srp:36241/)
+    * direction: inbound (60018 - srp:57869) [20]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/waypoint_loader]
+Publications: 
+ * /based/lane_waypoints_raw [autoware_msgs/LaneArray]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /waypoint_loader/get_loggers
+ * /waypoint_loader/set_logger_level
+
+
+contacting node http://srp:36021/ ...
+Pid: 12500
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (36805 - 127.0.0.1:41830) [12]
+    * transport: TCPROS
+ * topic: /based/lane_waypoints_raw
+    * to: /waypoint_replanner
+    * direction: outbound (36805 - 127.0.0.1:42332) [13]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34342 - srp:38543) [10]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/waypoint_marker_publisher]
+Publications: 
+ * /global_waypoints_mark [visualization_msgs/MarkerArray]
+ * /local_waypoints_mark [visualization_msgs/MarkerArray]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /closest_waypoint [std_msgs/Int32]
+ * /config/lane_stop [unknown type]
+ * /final_waypoints [autoware_msgs/Lane]
+ * /lane_waypoints_array [autoware_msgs/LaneArray]
+ * /light_color [unknown type]
+ * /light_color_managed [autoware_msgs/TrafficLight]
+ * /traffic_waypoints_array [autoware_msgs/LaneArray]
+
+Services: 
+ * /waypoint_marker_publisher/get_loggers
+ * /waypoint_marker_publisher/set_logger_level
+
+
+contacting node http://srp:33237/ ...
+Pid: 12520
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (37443 - 127.0.0.1:48344) [15]
+    * transport: TCPROS
+ * topic: /local_waypoints_mark
+    * to: /rviz_1626322140673293607
+    * direction: outbound (37443 - 127.0.0.1:48794) [23]
+    * transport: TCPROS
+ * topic: /global_waypoints_mark
+    * to: /rviz_1626322140673293607
+    * direction: outbound (37443 - 127.0.0.1:48798) [11]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34364 - srp:38543) [16]
+    * transport: TCPROS
+ * topic: /light_color_managed
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (53220 - srp:41241) [17]
+    * transport: TCPROS
+ * topic: /lane_waypoints_array
+    * to: /waypoint_replanner (http://srp:42345/)
+    * direction: inbound (51668 - srp:60447) [13]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /lane_stop (http://srp:46465/)
+    * direction: inbound (53096 - srp:59371) [21]
+    * transport: TCPROS
+ * topic: /traffic_waypoints_array
+    * to: /lane_rule (http://srp:42055/)
+    * direction: inbound (35416 - srp:57645) [22]
+    * transport: TCPROS
+ * topic: /final_waypoints
+    * to: /velocity_set (http://srp:44387/)
+    * direction: inbound (50182 - srp:49353) [20]
+    * transport: TCPROS
+ * topic: /closest_waypoint
+    * to: /lane_select (http://srp:46375/)
+    * direction: inbound (34144 - srp:41917) [14]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/waypoint_replanner]
+Publications: 
+ * /lane_waypoints_array [autoware_msgs/LaneArray]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /based/lane_waypoints_raw [autoware_msgs/LaneArray]
+ * /clock [rosgraph_msgs/Clock]
+ * /config/waypoint_replanner [autoware_config_msgs/ConfigWaypointReplanner]
+
+Services: 
+ * /waypoint_replanner/get_loggers
+ * /waypoint_replanner/set_logger_level
+
+
+contacting node http://srp:42345/ ...
+Pid: 12511
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (60447 - 127.0.0.1:51220) [11]
+    * transport: TCPROS
+ * topic: /lane_waypoints_array
+    * to: /lane_rule
+    * direction: outbound (60447 - 127.0.0.1:51466) [16]
+    * transport: TCPROS
+ * topic: /lane_waypoints_array
+    * to: /waypoint_marker_publisher
+    * direction: outbound (60447 - 127.0.0.1:51668) [13]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (34348 - srp:38543) [12]
+    * transport: TCPROS
+ * topic: /based/lane_waypoints_raw
+    * to: /waypoint_loader (http://srp:36021/)
+    * direction: inbound (42332 - srp:36805) [14]
+    * transport: TCPROS
+ * topic: /config/waypoint_replanner
+    * to: /runime_manager_1866_1626318804810 (http://srp:36169/)
+    * direction: inbound (53470 - srp:41241) [17]
+    * transport: TCPROS
+ * topic: /config/waypoint_replanner
+    * to: /config_waypoint_loader_rostopic (http://srp:46407/)
+    * direction: inbound (56236 - srp:39955) [18]
+    * transport: TCPROS
+
+--------------------------------------------------------------------------------
+Node [/world_to_map]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /tf [tf2_msgs/TFMessage]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /world_to_map/get_loggers
+ * /world_to_map/set_logger_level
+
+
+contacting node http://srp:37421/ ...
+Pid: 11515
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (42131 - 127.0.0.1:35664) [14]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /rviz_1626322140673293607
+    * direction: outbound (42131 - 127.0.0.1:35500) [13]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /lidar_euclidean_cluster_detect
+    * direction: outbound (42131 - 127.0.0.1:37088) [11]
+    * transport: TCPROS
+ * topic: /tf
+    * to: /astar_avoid
+    * direction: outbound (42131 - 127.0.0.1:38760) [15]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /play_1626322134638620190 (http://srp:37573/)
+    * direction: inbound (60432 - srp:38543) [12]
+    * transport: TCPROS
+

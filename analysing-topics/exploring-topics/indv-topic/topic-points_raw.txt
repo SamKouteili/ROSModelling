@@ -1,0 +1,68 @@
+Topic: /points_raw
+*******
+srp@srp:~/Desktop/topics/automated$ rostopic bw /points_raw 
+subscribed to [/points_raw]
+average: 21.70MB/s
+	mean: 1.90MB min: 1.90MB max: 1.90MB window: 6
+average: 19.82MB/s
+	mean: 1.89MB min: 1.87MB max: 1.90MB window: 16
+average: 19.37MB/s
+	mean: 1.88MB min: 1.86MB max: 1.90MB window: 26
+average: 19.13MB/s
+	mean: 1.87MB min: 1.85MB max: 1.90MB window: 36
+average: 18.97MB/s
+	mean: 1.87MB min: 1.84MB max: 1.90MB window: 46
+average: 18.88MB/s
+	mean: 1.86MB min: 1.84MB max: 1.90MB window: 56
+average: 18.84MB/s
+	mean: 1.86MB min: 1.84MB max: 1.90MB window: 66
+average: 18.82MB/s
+	mean: 1.87MB min: 1.84MB max: 1.90MB window: 76
+
+*******
+srp@srp:~/Desktop/topics/automated$ rostopic hz /points_raw
+subscribed to [/points_raw]
+WARNING: may be using simulated time
+average rate: 10.093
+	min: 0.091s max: 0.101s std dev: 0.00381s window: 7
+average rate: 9.995
+	min: 0.091s max: 0.101s std dev: 0.00245s window: 17
+average rate: 10.009
+	min: 0.091s max: 0.101s std dev: 0.00271s window: 27
+average rate: 9.987
+	min: 0.091s max: 0.111s std dev: 0.00335s window: 37
+average rate: 9.998
+	min: 0.091s max: 0.111s std dev: 0.00392s window: 47
+average rate: 9.986
+	min: 0.091s max: 0.111s std dev: 0.00356s window: 57
+
+*******
+srp@srp:~/Desktop/topics/automated$ rostopic type /points_raw 
+sensor_msgs/PointCloud2
+srp@srp:~/Desktop/topics/automated$ rosmsg show sensor_msgs/PointCloud2
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+uint32 height
+uint32 width
+sensor_msgs/PointField[] fields
+  uint8 INT8=1
+  uint8 UINT8=2
+  uint8 INT16=3
+  uint8 UINT16=4
+  uint8 INT32=5
+  uint8 UINT32=6
+  uint8 FLOAT32=7
+  uint8 FLOAT64=8
+  string name
+  uint32 offset
+  uint8 datatype
+  uint32 count
+bool is_bigendian
+uint32 point_step
+uint32 row_step
+uint8[] data
+bool is_dense
+
+*******
