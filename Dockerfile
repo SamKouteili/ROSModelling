@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
 ENV ROS_WS /opt/ros_ws
 RUN mkdir -p $ROS_WS/src
 ADD 1Pub1Topic2Sub $ROS_WS/1Pub1Topic2Sub
-RUN ls $ROS_WS/
 WORKDIR $ROS_WS/1Pub1Topic2Sub
 
 # Compile it
