@@ -1,8 +1,0 @@
-prefix=/home/samkouteili/ROSModelling/2Pub1Buf1Sub/devel
-
-Name: pkg01
-Description: Description of pkg01
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

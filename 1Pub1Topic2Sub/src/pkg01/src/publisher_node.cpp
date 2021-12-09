@@ -5,9 +5,17 @@ int main (int argc, char **argv) {
 
   ros::init(argc, argv, "Publisher");
   ros::NodeHandle nh;
-
+  int  node_rate = 0;
+  if (nh.getParam("node_rate", node_rate))
+    {
+      ROS_INFO("Got param: %d", node_rate);
+    }
+  else
+    {
+      ROS_ERROR("Failed to get param 'node_rate'");
+    }
   ros::Publisher topic_pub = nh.advertise<std_msgs::String>("topic1", 1000);
-  ros::Rate loop_rate(3);
+  ros::Rate loop_rate(node_rate);
 
   int count = 0;
   while (ros::ok()){
