@@ -1,0 +1,5 @@
+<launch>
+  <node name="publisher_node" pkg="pkg01" type="talker" />
+  <node name="subscriber_node" pkg="pkg01" type="talker" />
+  <node name="subscriber_node2" pkg="pkg01" type="talker" />
+</launch>
