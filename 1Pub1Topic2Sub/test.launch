@@ -1,5 +1,8 @@
 <launch>
-  <node name="publisher_node" pkg="pkg01" type="publisher_node" output="screen" />
+ <param name="node_rate" type="int" value="3"/>
+ <node name="publisher_node" pkg="pkg01" type="publisher_node" output="screen">
+   
+  </node>
   <node name="subscriber_node" pkg="pkg01" type="subscriber_node" output="screen" />
   <node name="subscriber_node2" pkg="pkg01" type="subscriber_node2" output="screen" />
 </launch>
