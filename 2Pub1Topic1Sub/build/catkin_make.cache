@@ -1,2 +1,0 @@
-pkg01
--DCATKIN_DEVEL_PREFIX=/home/samkouteili/ROSModelling/2Pub1Topic1Sub/devel -DCMAKE_INSTALL_PREFIX=/home/samkouteili/ROSModelling/2Pub1Topic1Sub/install -G Unix Makefiles
